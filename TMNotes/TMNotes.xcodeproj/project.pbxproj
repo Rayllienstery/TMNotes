@@ -7,25 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC1660E025F30A0F00F5D507 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1660DF25F30A0F00F5D507 /* EditorViewController.swift */; };
+		BC1660E325F30AF100F5D507 /* EditorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1660E225F30AF100F5D507 /* EditorProvider.swift */; };
+		BC1660E625F30AFC00F5D507 /* EditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1660E525F30AFC00F5D507 /* EditorPresenter.swift */; };
+		BC49B18825F8963900095814 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49B18725F8963800095814 /* NoteTableViewCell.swift */; };
 		BC535F9925F2FAE8002B8AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC535F9825F2FAE8002B8AB8 /* AppDelegate.swift */; };
 		BC535F9B25F2FAE8002B8AB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC535F9A25F2FAE8002B8AB8 /* SceneDelegate.swift */; };
-		BC535F9D25F2FAE8002B8AB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC535F9C25F2FAE8002B8AB8 /* ViewController.swift */; };
+		BC535F9D25F2FAE8002B8AB8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC535F9C25F2FAE8002B8AB8 /* MainViewController.swift */; };
 		BC535FA025F2FAE8002B8AB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC535F9E25F2FAE8002B8AB8 /* Main.storyboard */; };
 		BC535FA325F2FAE8002B8AB8 /* TMNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC535FA125F2FAE8002B8AB8 /* TMNotes.xcdatamodeld */; };
 		BC535FA525F2FAE8002B8AB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC535FA425F2FAE8002B8AB8 /* Assets.xcassets */; };
 		BC535FA825F2FAE8002B8AB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC535FA625F2FAE8002B8AB8 /* LaunchScreen.storyboard */; };
+		BC535FB925F30277002B8AB8 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC535FB825F30277002B8AB8 /* MainTableView.swift */; };
+		BC535FBC25F302CC002B8AB8 /* NotesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC535FBB25F302CC002B8AB8 /* NotesProvider.swift */; };
+		BC535FBF25F30475002B8AB8 /* MainProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC535FBE25F30475002B8AB8 /* MainProvider.swift */; };
+		BC535FC225F304B9002B8AB8 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC535FC125F304B9002B8AB8 /* MainPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC1660DF25F30A0F00F5D507 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		BC1660E225F30AF100F5D507 /* EditorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorProvider.swift; sourceTree = "<group>"; };
+		BC1660E525F30AFC00F5D507 /* EditorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorPresenter.swift; sourceTree = "<group>"; };
+		BC49B18725F8963800095814 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		BC535F9525F2FAE8002B8AB8 /* TMNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC535F9825F2FAE8002B8AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC535F9A25F2FAE8002B8AB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BC535F9C25F2FAE8002B8AB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BC535F9C25F2FAE8002B8AB8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BC535F9F25F2FAE8002B8AB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BC535FA225F2FAE8002B8AB8 /* TMNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TMNotes.xcdatamodel; sourceTree = "<group>"; };
 		BC535FA425F2FAE8002B8AB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC535FA725F2FAE8002B8AB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC535FA925F2FAE8002B8AB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC535FB825F30277002B8AB8 /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
+		BC535FBB25F302CC002B8AB8 /* NotesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesProvider.swift; sourceTree = "<group>"; };
+		BC535FBE25F30475002B8AB8 /* MainProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProvider.swift; sourceTree = "<group>"; };
+		BC535FC125F304B9002B8AB8 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +55,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC1660DE25F30A0000F5D507 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				BC1660DF25F30A0F00F5D507 /* EditorViewController.swift */,
+				BC1660E225F30AF100F5D507 /* EditorProvider.swift */,
+				BC1660E525F30AFC00F5D507 /* EditorPresenter.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		BC49B18525F8961800095814 /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC49B18725F8963800095814 /* NoteTableViewCell.swift */,
+			);
+			path = UITableViewCell;
+			sourceTree = "<group>";
+		};
 		BC535F8C25F2FAE8002B8AB8 = {
 			isa = PBXGroup;
 			children = (
@@ -58,16 +92,54 @@
 		BC535F9725F2FAE8002B8AB8 /* TMNotes */ = {
 			isa = PBXGroup;
 			children = (
-				BC535F9825F2FAE8002B8AB8 /* AppDelegate.swift */,
-				BC535F9A25F2FAE8002B8AB8 /* SceneDelegate.swift */,
-				BC535F9C25F2FAE8002B8AB8 /* ViewController.swift */,
-				BC535F9E25F2FAE8002B8AB8 /* Main.storyboard */,
-				BC535FA425F2FAE8002B8AB8 /* Assets.xcassets */,
-				BC535FA625F2FAE8002B8AB8 /* LaunchScreen.storyboard */,
-				BC535FA925F2FAE8002B8AB8 /* Info.plist */,
-				BC535FA125F2FAE8002B8AB8 /* TMNotes.xcdatamodeld */,
+				BC535FB225F301C7002B8AB8 /* Model */,
+				BC535FB325F301D1002B8AB8 /* View */,
+				BC535FB425F301D5002B8AB8 /* Controller */,
 			);
 			path = TMNotes;
+			sourceTree = "<group>";
+		};
+		BC535FB225F301C7002B8AB8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC49B18525F8961800095814 /* UITableViewCell */,
+				BC535F9825F2FAE8002B8AB8 /* AppDelegate.swift */,
+				BC535F9A25F2FAE8002B8AB8 /* SceneDelegate.swift */,
+				BC535FA425F2FAE8002B8AB8 /* Assets.xcassets */,
+				BC535FA925F2FAE8002B8AB8 /* Info.plist */,
+				BC535FA125F2FAE8002B8AB8 /* TMNotes.xcdatamodeld */,
+				BC535FBB25F302CC002B8AB8 /* NotesProvider.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC535FB325F301D1002B8AB8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC535FA625F2FAE8002B8AB8 /* LaunchScreen.storyboard */,
+				BC535F9E25F2FAE8002B8AB8 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC535FB425F301D5002B8AB8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BC1660DE25F30A0000F5D507 /* Editor */,
+				BC535FB625F3020F002B8AB8 /* Main */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BC535FB625F3020F002B8AB8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BC535F9C25F2FAE8002B8AB8 /* MainViewController.swift */,
+				BC535FB825F30277002B8AB8 /* MainTableView.swift */,
+				BC535FBE25F30475002B8AB8 /* MainProvider.swift */,
+				BC535FC125F304B9002B8AB8 /* MainPresenter.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,8 +233,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC535F9D25F2FAE8002B8AB8 /* ViewController.swift in Sources */,
+				BC1660E625F30AFC00F5D507 /* EditorPresenter.swift in Sources */,
+				BC535FBC25F302CC002B8AB8 /* NotesProvider.swift in Sources */,
+				BC1660E025F30A0F00F5D507 /* EditorViewController.swift in Sources */,
+				BC535FBF25F30475002B8AB8 /* MainProvider.swift in Sources */,
+				BC535F9D25F2FAE8002B8AB8 /* MainViewController.swift in Sources */,
+				BC535FC225F304B9002B8AB8 /* MainPresenter.swift in Sources */,
+				BC1660E325F30AF100F5D507 /* EditorProvider.swift in Sources */,
 				BC535F9925F2FAE8002B8AB8 /* AppDelegate.swift in Sources */,
+				BC535FB925F30277002B8AB8 /* MainTableView.swift in Sources */,
+				BC49B18825F8963900095814 /* NoteTableViewCell.swift in Sources */,
 				BC535FA325F2FAE8002B8AB8 /* TMNotes.xcdatamodeld in Sources */,
 				BC535F9B25F2FAE8002B8AB8 /* SceneDelegate.swift in Sources */,
 			);
@@ -313,7 +393,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WK5GQ95HSM;
-				INFOPLIST_FILE = TMNotes/Info.plist;
+				INFOPLIST_FILE = TMNotes/Model/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,7 +412,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WK5GQ95HSM;
-				INFOPLIST_FILE = TMNotes/Info.plist;
+				INFOPLIST_FILE = TMNotes/Model/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
