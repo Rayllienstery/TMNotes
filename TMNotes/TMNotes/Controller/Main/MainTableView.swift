@@ -51,13 +51,13 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         let deleteAction = UIContextualAction(style: .normal, title: "Trash") { (_, _, _) in
             self.trashNote(indexPath: indexPath)
         }
-        deleteAction.backgroundColor = .red
+        deleteAction.backgroundColor = .systemRed
         deleteAction.image = UIImage(systemName: "trash")?.withTintColor(.black)
 
         let pinAction = UIContextualAction(style: .normal, title: "Pin") { (_, _, _) in
             self.pinNote(indexPath: indexPath)
         }
-        pinAction.backgroundColor = .blue
+        pinAction.backgroundColor = .systemGreen
         pinAction.image = UIImage(systemName: "pin.fill")?.withTintColor(.black)
 
         return .init(actions: [deleteAction, pinAction])
