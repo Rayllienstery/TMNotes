@@ -18,7 +18,7 @@ class NotesProvider {
     func getNotes() -> [Note]? {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?
                 .persistentContainer.viewContext else { return nil }
-        return try? context.fetch(Note.fetchRequest())
+        return try? context.fetch(Note.fetchRequest()).filter({$0.markedAsDeleted == false})
     }
 
     func addNote(title: String, content: String? = "") {
@@ -28,21 +28,29 @@ class NotesProvider {
         note.title = title
         note.content = content
         note.id = Int64(updateLatestIdWithGet())
-        self.save(context)
+        self.sync(context)
     }
 
     func updateLatestIdWithGet() -> Int {
-        var id = UserDefaults.standard.integer(forKey: NotesProviderValues.latestNoteId.rawValue) 
-        id += 1
-        UserDefaults.standard.setValue(id, forKey: NotesProviderValues.latestNoteId.rawValue)
-        return id
+        var noteId = UserDefaults.standard.integer(forKey: NotesProviderValues.latestNoteId.rawValue)
+        noteId += 1
+        UserDefaults.standard.setValue(noteId, forKey: NotesProviderValues.latestNoteId.rawValue)
+        return noteId
     }
 
-    func save(_ context: NSManagedObjectContext) {
+    func sync(_ context: NSManagedObjectContext) {
         do {
             try context.save()
         } catch {
             print(error)
         }
+    }
+
+    func markAsTrashed(_ note: Note, completion: @escaping () -> Void) {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?
+                .persistentContainer.viewContext else { return }
+        note.markedAsDeleted = true
+        sync(context)
+        completion()
     }
 }
