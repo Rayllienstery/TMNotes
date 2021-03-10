@@ -18,7 +18,7 @@ class NotesProvider {
     func getNotes() -> [Note]? {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?
                 .persistentContainer.viewContext else { return nil }
-        return try? context.fetch(Note.fetchRequest()).filter({$0.markedAsDeleted == false})
+        return try? context.fetch(Note.fetchRequest()).filter({$0.trashed == false})
     }
 
     func addNote(title: String, content: String? = "") {
@@ -49,7 +49,15 @@ class NotesProvider {
     func markAsTrashed(_ note: Note, completion: @escaping () -> Void) {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?
                 .persistentContainer.viewContext else { return }
-        note.markedAsDeleted = true
+        note.trashed = true
+        sync(context)
+        completion()
+    }
+
+    func markAsPinned(_ note: Note, completion: @escaping () -> Void) {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?
+                .persistentContainer.viewContext else { return }
+        note.pinned = !note.pinned
         sync(context)
         completion()
     }

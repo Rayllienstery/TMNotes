@@ -10,6 +10,8 @@ import UIKit
 class NoteTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+
+    @IBOutlet weak var pinnedImageView: UIImageView!
     var note: Note?
 
     override func prepareForReuse() {
@@ -21,5 +23,7 @@ class NoteTableViewCell: UITableViewCell {
 
         self.titleLabel.text = note.title ?? ""
         self.subtitleLabel.text = note.content ?? ""
+
+        self.pinnedImageView.isHidden = !note.pinned
     }
 }

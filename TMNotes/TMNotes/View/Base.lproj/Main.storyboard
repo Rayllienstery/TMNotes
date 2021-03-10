@@ -39,10 +39,28 @@
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ahO-J4-9Od">
+                                                    <rect key="frame" x="382" y="12" width="16" height="16"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="398-t8-UzP">
+                                                            <rect key="frame" x="0.0" y="-0.5" width="16" height="17.5"/>
+                                                            <color key="tintColor" systemColor="systemYellowColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="16" id="RI5-DZ-QKN"/>
+                                                                <constraint firstAttribute="width" secondItem="398-t8-UzP" secondAttribute="height" id="cC9-41-dbP"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="398-t8-UzP" firstAttribute="width" secondItem="398-t8-UzP" secondAttribute="height" id="dXv-lN-ofA"/>
+                                                    </constraints>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="sQO-OJ-VS0" firstAttribute="top" secondItem="IP0-zs-w1g" secondAttribute="bottom" constant="6" id="2Ss-Kq-WfD"/>
                                                 <constraint firstItem="IP0-zs-w1g" firstAttribute="leading" secondItem="MPv-GB-NJO" secondAttribute="leading" constant="16" id="G9P-DZ-26Z"/>
+                                                <constraint firstAttribute="trailing" secondItem="ahO-J4-9Od" secondAttribute="trailing" constant="16" id="Npt-vS-UWu"/>
+                                                <constraint firstItem="ahO-J4-9Od" firstAttribute="top" secondItem="MPv-GB-NJO" secondAttribute="top" constant="12" id="UNl-He-CV5"/>
                                                 <constraint firstItem="sQO-OJ-VS0" firstAttribute="leading" secondItem="MPv-GB-NJO" secondAttribute="leading" constant="16" id="XQD-0e-iXs"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sQO-OJ-VS0" secondAttribute="trailing" constant="12" id="bN8-mY-wPH"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="sQO-OJ-VS0" secondAttribute="bottom" constant="6" id="dt3-cS-3h2"/>
@@ -51,6 +69,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="pinnedImageView" destination="398-t8-UzP" id="C3f-Pv-LZH"/>
                                             <outlet property="subtitleLabel" destination="sQO-OJ-VS0" id="8r4-aP-975"/>
                                             <outlet property="titleLabel" destination="IP0-zs-w1g" id="pXv-QK-dkS"/>
                                         </connections>
@@ -174,6 +193,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="pin.fill" catalog="system" width="119" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -186,6 +206,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
