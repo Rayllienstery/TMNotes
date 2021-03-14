@@ -22,9 +22,11 @@ class NotesProvider {
         switch folder {
         case "Trash":
             request.predicate = NSPredicate(format: "trashed == %d", true)
+        case "Starred":
+            request.predicate = NSPredicate(format: "starred == %d", true)
         default:
             request.predicate = NSPredicate(format: "trashed == %d", false)
-        } 
+        }
         return try? context.fetch(request)
     }
 
@@ -111,6 +113,14 @@ class NotesProvider {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?
                 .persistentContainer.viewContext else { return }
         note.pinned = !note.pinned
+        sync(context)
+        completion()
+    }
+
+    func markAsStarred(_ note: Note, completion: @escaping () -> Void) {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?
+                .persistentContainer.viewContext else { return }
+        note.starred = !note.starred
         sync(context)
         completion()
     }

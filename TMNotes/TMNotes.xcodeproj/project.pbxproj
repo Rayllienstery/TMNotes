@@ -26,6 +26,10 @@
 		BC535FBF25F30475002B8AB8 /* MainProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC535FBE25F30475002B8AB8 /* MainProvider.swift */; };
 		BC535FC225F304B9002B8AB8 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC535FC125F304B9002B8AB8 /* MainPresenter.swift */; };
 		BCBB1FE225FE361500A061AF /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB1FE125FE361500A061AF /* UINavigationController.swift */; };
+		BCBB1FF525FE458C00A061AF /* SelectFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB1FF325FE458C00A061AF /* SelectFolderViewController.swift */; };
+		BCBB1FF625FE458C00A061AF /* SelectFolderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB1FF425FE458C00A061AF /* SelectFolderTableView.swift */; };
+		BCBB1FFA25FE45FF00A061AF /* SelectFolderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB1FF925FE45FF00A061AF /* SelectFolderProvider.swift */; };
+		BCBB1FFD25FE462600A061AF /* SelectFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB1FFC25FE462600A061AF /* SelectFolderTableViewCell.swift */; };
 		BCF42CC625FE234200D122E1 /* EditorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF42CC525FE234200D122E1 /* EditorRouter.swift */; };
 		BCF91F2D25FE270B00913ADD /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF91F2C25FE270B00913ADD /* MainRouter.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +56,10 @@
 		BC535FBE25F30475002B8AB8 /* MainProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProvider.swift; sourceTree = "<group>"; };
 		BC535FC125F304B9002B8AB8 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		BCBB1FE125FE361500A061AF /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		BCBB1FF325FE458C00A061AF /* SelectFolderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFolderViewController.swift; sourceTree = "<group>"; };
+		BCBB1FF425FE458C00A061AF /* SelectFolderTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFolderTableView.swift; sourceTree = "<group>"; };
+		BCBB1FF925FE45FF00A061AF /* SelectFolderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFolderProvider.swift; sourceTree = "<group>"; };
+		BCBB1FFC25FE462600A061AF /* SelectFolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFolderTableViewCell.swift; sourceTree = "<group>"; };
 		BCF42CC525FE234200D122E1 /* EditorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorRouter.swift; sourceTree = "<group>"; };
 		BCF91F2C25FE270B00913ADD /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +91,7 @@
 			children = (
 				BC49B18725F8963800095814 /* NoteTableViewCell.swift */,
 				BC49B18B25F8A83200095814 /* FoldersTableViewCell.swift */,
+				BCBB1FFC25FE462600A061AF /* SelectFolderTableViewCell.swift */,
 			);
 			path = UITableViewCell;
 			sourceTree = "<group>";
@@ -152,6 +161,7 @@
 			children = (
 				BC1660DE25F30A0000F5D507 /* Editor */,
 				BC535FB625F3020F002B8AB8 /* Main */,
+				BCBB1FE525FE447000A061AF /* SelectFolder */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -174,6 +184,16 @@
 				BCBB1FE125FE361500A061AF /* UINavigationController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BCBB1FE525FE447000A061AF /* SelectFolder */ = {
+			isa = PBXGroup;
+			children = (
+				BCBB1FF425FE458C00A061AF /* SelectFolderTableView.swift */,
+				BCBB1FF325FE458C00A061AF /* SelectFolderViewController.swift */,
+				BCBB1FF925FE45FF00A061AF /* SelectFolderProvider.swift */,
+			);
+			path = SelectFolder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,10 +288,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC1660E625F30AFC00F5D507 /* EditorPresenter.swift in Sources */,
+				BCBB1FFD25FE462600A061AF /* SelectFolderTableViewCell.swift in Sources */,
 				BC535FBC25F302CC002B8AB8 /* NotesProvider.swift in Sources */,
 				BC1660E025F30A0F00F5D507 /* EditorViewController.swift in Sources */,
+				BCBB1FFA25FE45FF00A061AF /* SelectFolderProvider.swift in Sources */,
 				BCF91F2D25FE270B00913ADD /* MainRouter.swift in Sources */,
 				BC535FBF25F30475002B8AB8 /* MainProvider.swift in Sources */,
+				BCBB1FF525FE458C00A061AF /* SelectFolderViewController.swift in Sources */,
 				BC535F9D25F2FAE8002B8AB8 /* MainViewController.swift in Sources */,
 				BCF42CC625FE234200D122E1 /* EditorRouter.swift in Sources */,
 				BC535FC225F304B9002B8AB8 /* MainPresenter.swift in Sources */,
@@ -279,6 +302,7 @@
 				BC535F9925F2FAE8002B8AB8 /* AppDelegate.swift in Sources */,
 				BC535FB925F30277002B8AB8 /* MainTableView.swift in Sources */,
 				BC49B19425F8AEC000095814 /* NotesFolder.swift in Sources */,
+				BCBB1FF625FE458C00A061AF /* SelectFolderTableView.swift in Sources */,
 				BC49B18C25F8A83200095814 /* FoldersTableViewCell.swift in Sources */,
 				BC49B19025F8AA7300095814 /* FolderCollectionViewCell.swift in Sources */,
 				BC49B18825F8963900095814 /* NoteTableViewCell.swift in Sources */,

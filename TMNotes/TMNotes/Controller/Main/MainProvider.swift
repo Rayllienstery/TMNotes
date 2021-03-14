@@ -46,6 +46,14 @@ extension MainViewController {
         }
     }
 
+    func starNote(indexPath: IndexPath) {
+        guard let note = getNoteFromCell(indexPath: indexPath) else { return }
+        NotesProvider.shared.markAsStarred(note) {
+            self.fetchNotes()
+            self.notesListTableView.reloadData()
+        }
+    }
+
     func getNoteFromCell(indexPath: IndexPath) -> Note? {
         guard let cell = notesListTableView.cellForRow(at: indexPath) as? NoteTableViewCell else { return nil }
         guard let note = cell.note else { return nil }
