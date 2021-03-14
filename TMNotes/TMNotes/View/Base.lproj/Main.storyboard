@@ -23,37 +23,37 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoldersCell" id="MfW-0M-SGu" customClass="FoldersTableViewCell" customModule="TMNotes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="148.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MfW-0M-SGu" id="ZMj-jh-vtu">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="148.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9f4-q6-GOh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                                    <rect key="frame" x="0.0" y="28.5" width="414" height="120"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="120" id="3pc-Ws-cr1"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="OKu-Ch-uAe">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OKu-Ch-uAe">
                                                         <size key="itemSize" width="135" height="85"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FolderCell" id="543-IS-l7k" customClass="FolderCollectionViewCell" customModule="TMNotes" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="120"/>
+                                                            <rect key="frame" x="16" y="0.0" width="180" height="120"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="79d-5l-wyx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="120"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jMJ-r4-LY4">
-                                                                        <rect key="frame" x="8" y="12" width="164" height="96"/>
+                                                                        <rect key="frame" x="0.0" y="12" width="180" height="96"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xIZ-pB-5Qj">
-                                                                                <rect key="frame" x="132" y="65" width="24" height="21.5"/>
+                                                                                <rect key="frame" x="148" y="65" width="24" height="21.5"/>
                                                                                 <color key="tintColor" systemColor="secondaryLabelColor"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="24" id="5F8-mP-Ldj"/>
@@ -92,8 +92,8 @@
                                                                     </view>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="jMJ-r4-LY4" firstAttribute="leading" secondItem="79d-5l-wyx" secondAttribute="leading" constant="8" id="39d-1p-n72"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="jMJ-r4-LY4" secondAttribute="trailing" constant="8" id="5q7-PU-og9"/>
+                                                                    <constraint firstItem="jMJ-r4-LY4" firstAttribute="leading" secondItem="79d-5l-wyx" secondAttribute="leading" id="39d-1p-n72"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="jMJ-r4-LY4" secondAttribute="trailing" id="5q7-PU-og9"/>
                                                                     <constraint firstAttribute="bottom" secondItem="jMJ-r4-LY4" secondAttribute="bottom" constant="12" id="MxV-wE-S0f"/>
                                                                     <constraint firstItem="jMJ-r4-LY4" firstAttribute="top" secondItem="79d-5l-wyx" secondAttribute="top" constant="12" id="lHK-Bt-EOb"/>
                                                                 </constraints>
@@ -107,12 +107,20 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Folders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRV-k3-d0c">
+                                                    <rect key="frame" x="16" y="4" width="56.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="9f4-q6-GOh" secondAttribute="bottom" id="08E-ho-gKb"/>
                                                 <constraint firstItem="9f4-q6-GOh" firstAttribute="leading" secondItem="ZMj-jh-vtu" secondAttribute="leading" id="HMM-dg-oDp"/>
                                                 <constraint firstAttribute="trailing" secondItem="9f4-q6-GOh" secondAttribute="trailing" id="MeP-KW-BIU"/>
-                                                <constraint firstItem="9f4-q6-GOh" firstAttribute="top" secondItem="ZMj-jh-vtu" secondAttribute="top" id="QC1-eC-8yL"/>
+                                                <constraint firstItem="9f4-q6-GOh" firstAttribute="top" secondItem="eRV-k3-d0c" secondAttribute="bottom" constant="4" id="bth-AA-lSx"/>
+                                                <constraint firstItem="eRV-k3-d0c" firstAttribute="top" secondItem="ZMj-jh-vtu" secondAttribute="top" constant="4" id="fOK-g3-Qdd"/>
+                                                <constraint firstItem="eRV-k3-d0c" firstAttribute="leading" secondItem="ZMj-jh-vtu" secondAttribute="leading" constant="16" id="zTg-Q1-Tag"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -120,7 +128,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" id="MUa-hK-wpe" customClass="NoteTableViewCell" customModule="TMNotes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="148" width="414" height="57.5"/>
+                                        <rect key="frame" x="0.0" y="176.5" width="414" height="57.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MUa-hK-wpe" id="MPv-GB-NJO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="57.5"/>

@@ -45,7 +45,7 @@ extension FoldersTableViewCell: UICollectionViewDelegate,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(
-            width: collectionView.frame.height * 1.4,
+            width: collectionView.frame.height * 1.25,
             height: collectionView.frame.height)
     }
 
