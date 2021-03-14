@@ -8,9 +8,11 @@
 import UIKit
 
 class SelectFolderViewController: UIViewController {
+    @IBOutlet weak var foldersTableView: UITableView!
     var folders = [NotesFolder]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.updateFoldersList()
     }
 }

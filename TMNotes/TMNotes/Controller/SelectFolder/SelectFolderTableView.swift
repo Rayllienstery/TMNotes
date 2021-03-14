@@ -9,12 +9,13 @@ import UIKit
 
 extension SelectFolderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.folders.count
+        return self.folders.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: "SelectFolderCell") as? SelectFolderTableViewCell else { fatalError() }
+        cell.setFolder(folders[indexPath.row])
+        return cell
     }
-    
-    
 }

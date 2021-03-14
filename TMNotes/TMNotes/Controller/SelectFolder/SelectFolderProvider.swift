@@ -8,5 +8,8 @@
 import Foundation
 
 extension SelectFolderViewController {
-    
+    func updateFoldersList() {
+        self.folders = NotesProvider.shared.getFolders()
+        self.foldersTableView.reloadData()
+    }
 }

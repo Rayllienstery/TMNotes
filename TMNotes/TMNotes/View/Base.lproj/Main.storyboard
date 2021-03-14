@@ -284,16 +284,42 @@
         <!--Folders-->
         <scene sceneID="ByR-Wp-eyF">
             <objects>
-                <viewController id="Ryq-Rt-dxe" sceneMemberID="viewController">
+                <viewController id="Ryq-Rt-dxe" customClass="SelectFolderViewController" customModule="TMNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JuJ-l0-W46">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8A-3d-H4j">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeT-oa-262">
+                                        <rect key="frame" x="373.5" y="8" width="24.5" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="zEs-it-IoO"/>
+                                        </constraints>
+                                        <state key="normal" image="folder.badge.plus" catalog="system"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Folders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9n-oq-ltW">
+                                        <rect key="frame" x="179" y="13.5" width="56.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Q9n-oq-ltW" firstAttribute="centerY" secondItem="Q8A-3d-H4j" secondAttribute="centerY" id="RBv-J1-IIj"/>
+                                    <constraint firstAttribute="height" constant="48" id="a6o-N8-54U"/>
+                                    <constraint firstItem="Q9n-oq-ltW" firstAttribute="centerX" secondItem="Q8A-3d-H4j" secondAttribute="centerX" id="a78-xQ-kgX"/>
+                                    <constraint firstAttribute="trailing" secondItem="BeT-oa-262" secondAttribute="trailing" constant="16" id="fie-op-QoQ"/>
+                                    <constraint firstItem="BeT-oa-262" firstAttribute="centerY" secondItem="Q8A-3d-H4j" secondAttribute="centerY" id="l1e-td-VoK"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CnA-51-Y2Z">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="760"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FolderCell" id="H91-0H-kWC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectFolderCell" id="H91-0H-kWC" customClass="SelectFolderTableViewCell" customModule="TMNotes" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H91-0H-kWC" id="PDN-eE-oTs">
@@ -312,16 +338,29 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSn-XM-bKc">
+                                                    <rect key="frame" x="363" y="20.5" width="31" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="nzI-i9-lGm" firstAttribute="top" secondItem="PDN-eE-oTs" secondAttribute="topMargin" constant="6" id="1Sd-7K-9GC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hSn-XM-bKc" secondAttribute="trailing" id="60e-XU-F61"/>
                                                 <constraint firstItem="ggD-34-Ajd" firstAttribute="leading" secondItem="PDN-eE-oTs" secondAttribute="leading" constant="16" id="8x0-3q-BDp"/>
                                                 <constraint firstItem="nzI-i9-lGm" firstAttribute="centerY" secondItem="ggD-34-Ajd" secondAttribute="centerY" id="Cc5-Hh-Qsk"/>
                                                 <constraint firstItem="nzI-i9-lGm" firstAttribute="leading" secondItem="ggD-34-Ajd" secondAttribute="trailing" constant="8" id="IGy-Hd-s9A"/>
+                                                <constraint firstItem="hSn-XM-bKc" firstAttribute="centerY" secondItem="PDN-eE-oTs" secondAttribute="centerY" id="X30-oh-ClA"/>
                                                 <constraint firstItem="nzI-i9-lGm" firstAttribute="centerY" secondItem="PDN-eE-oTs" secondAttribute="centerY" id="fye-Op-85P"/>
-                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="nzI-i9-lGm" secondAttribute="trailing" constant="16" id="t5i-w4-FCN"/>
+                                                <constraint firstItem="hSn-XM-bKc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nzI-i9-lGm" secondAttribute="trailing" constant="8" id="ncg-ab-Pzg"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="folderImageView" destination="ggD-34-Ajd" id="ODG-dK-hkB"/>
+                                            <outlet property="notesCountLabel" destination="hSn-XM-bKc" id="WVq-Zn-Ood"/>
+                                            <outlet property="titleLabel" destination="nzI-i9-lGm" id="mbf-fA-xBR"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -333,13 +372,19 @@
                         <viewLayoutGuide key="safeArea" id="qFN-OB-XMg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Q8A-3d-H4j" firstAttribute="leading" secondItem="qFN-OB-XMg" secondAttribute="leading" id="2e3-i1-Znz"/>
                             <constraint firstItem="qFN-OB-XMg" firstAttribute="trailing" secondItem="CnA-51-Y2Z" secondAttribute="trailing" id="DnN-9L-eHC"/>
-                            <constraint firstItem="CnA-51-Y2Z" firstAttribute="top" secondItem="qFN-OB-XMg" secondAttribute="top" id="FTM-M7-732"/>
                             <constraint firstItem="qFN-OB-XMg" firstAttribute="bottom" secondItem="CnA-51-Y2Z" secondAttribute="bottom" id="PcW-fu-HpQ"/>
+                            <constraint firstItem="qFN-OB-XMg" firstAttribute="trailing" secondItem="Q8A-3d-H4j" secondAttribute="trailing" id="RKd-oh-rOY"/>
+                            <constraint firstItem="Q8A-3d-H4j" firstAttribute="top" secondItem="qFN-OB-XMg" secondAttribute="top" id="c1i-pI-tHT"/>
                             <constraint firstItem="CnA-51-Y2Z" firstAttribute="leading" secondItem="qFN-OB-XMg" secondAttribute="leading" id="cRZ-8j-BVp"/>
+                            <constraint firstItem="CnA-51-Y2Z" firstAttribute="top" secondItem="Q8A-3d-H4j" secondAttribute="bottom" id="uVd-Fs-Cmd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Folders" id="X6m-Fz-RnR"/>
+                    <connections>
+                        <outlet property="foldersTableView" destination="CnA-51-Y2Z" id="vob-Ip-Khp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X46-Vp-hVl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -434,6 +479,7 @@
     </scenes>
     <resources>
         <image name="folder" catalog="system" width="128" height="97"/>
+        <image name="folder.badge.plus" catalog="system" width="128" height="91"/>
         <image name="folder.fill" catalog="system" width="128" height="97"/>
         <image name="pin.fill" catalog="system" width="119" height="128"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
