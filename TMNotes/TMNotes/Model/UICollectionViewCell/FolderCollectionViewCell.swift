@@ -11,7 +11,7 @@ class FolderCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var notesCountLabel: UILabel!
     @IBOutlet weak var folderAvatarImageView: UIImageView!
-    
+
     var folder: NotesFolder?
 
     func setFolder(_ folder: NotesFolder) {

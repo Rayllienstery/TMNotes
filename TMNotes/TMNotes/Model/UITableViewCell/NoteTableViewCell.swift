@@ -10,6 +10,7 @@ import UIKit
 class NoteTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var spacerConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var pinnedImageView: UIImageView!
     var note: Note?
@@ -25,5 +26,9 @@ class NoteTableViewCell: UITableViewCell {
         self.subtitleLabel.text = note.content ?? ""
 
         self.pinnedImageView.isHidden = !note.pinned
+
+        self.spacerConstraint.constant = (
+            (titleLabel.text?.count ?? 0) == 0 ||
+            (subtitleLabel.text?.count ?? 0) == 0) ? 0 : 6
     }
 }

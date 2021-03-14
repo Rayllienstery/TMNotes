@@ -178,6 +178,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="pinnedImageView" destination="398-t8-UzP" id="C3f-Pv-LZH"/>
+                                            <outlet property="spacerConstraint" destination="2Ss-Kq-WfD" id="rO7-Mc-p0j"/>
                                             <outlet property="subtitleLabel" destination="sQO-OJ-VS0" id="8r4-aP-975"/>
                                             <outlet property="titleLabel" destination="IP0-zs-w1g" id="pXv-QK-dkS"/>
                                         </connections>
