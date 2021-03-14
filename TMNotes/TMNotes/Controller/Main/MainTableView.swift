@@ -11,24 +11,27 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 0
+            return 1
         case 1:
             return self.notes.count
         default:
             return 0
         }
-        
+
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            return UITableViewCell()
-
+            guard let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "FoldersCell") as? FoldersTableViewCell
+            else { fatalError("Missing FoldersTableViewCell") }
+            cell.setFolders(self.folders)
+            return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(
                     withIdentifier: "NoteCell") as? NoteTableViewCell

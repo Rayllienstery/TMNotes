@@ -11,6 +11,9 @@
 		BC1660E325F30AF100F5D507 /* EditorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1660E225F30AF100F5D507 /* EditorProvider.swift */; };
 		BC1660E625F30AFC00F5D507 /* EditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1660E525F30AFC00F5D507 /* EditorPresenter.swift */; };
 		BC49B18825F8963900095814 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49B18725F8963800095814 /* NoteTableViewCell.swift */; };
+		BC49B18C25F8A83200095814 /* FoldersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49B18B25F8A83200095814 /* FoldersTableViewCell.swift */; };
+		BC49B19025F8AA7300095814 /* FolderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49B18F25F8AA7300095814 /* FolderCollectionViewCell.swift */; };
+		BC49B19425F8AEC000095814 /* NotesFolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49B19325F8AEC000095814 /* NotesFolder.swift */; };
 		BC535F9925F2FAE8002B8AB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC535F9825F2FAE8002B8AB8 /* AppDelegate.swift */; };
 		BC535F9B25F2FAE8002B8AB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC535F9A25F2FAE8002B8AB8 /* SceneDelegate.swift */; };
 		BC535F9D25F2FAE8002B8AB8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC535F9C25F2FAE8002B8AB8 /* MainViewController.swift */; };
@@ -29,6 +32,9 @@
 		BC1660E225F30AF100F5D507 /* EditorProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorProvider.swift; sourceTree = "<group>"; };
 		BC1660E525F30AFC00F5D507 /* EditorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorPresenter.swift; sourceTree = "<group>"; };
 		BC49B18725F8963800095814 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		BC49B18B25F8A83200095814 /* FoldersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersTableViewCell.swift; sourceTree = "<group>"; };
+		BC49B18F25F8AA7300095814 /* FolderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCollectionViewCell.swift; sourceTree = "<group>"; };
+		BC49B19325F8AEC000095814 /* NotesFolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesFolder.swift; sourceTree = "<group>"; };
 		BC535F9525F2FAE8002B8AB8 /* TMNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC535F9825F2FAE8002B8AB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC535F9A25F2FAE8002B8AB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,8 +75,17 @@
 			isa = PBXGroup;
 			children = (
 				BC49B18725F8963800095814 /* NoteTableViewCell.swift */,
+				BC49B18B25F8A83200095814 /* FoldersTableViewCell.swift */,
 			);
 			path = UITableViewCell;
+			sourceTree = "<group>";
+		};
+		BC49B18E25F8AA4100095814 /* UICollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BC49B18F25F8AA7300095814 /* FolderCollectionViewCell.swift */,
+			);
+			path = UICollectionViewCell;
 			sourceTree = "<group>";
 		};
 		BC535F8C25F2FAE8002B8AB8 = {
@@ -102,6 +117,7 @@
 		BC535FB225F301C7002B8AB8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BC49B18E25F8AA4100095814 /* UICollectionViewCell */,
 				BC49B18525F8961800095814 /* UITableViewCell */,
 				BC535F9825F2FAE8002B8AB8 /* AppDelegate.swift */,
 				BC535F9A25F2FAE8002B8AB8 /* SceneDelegate.swift */,
@@ -109,6 +125,7 @@
 				BC535FA925F2FAE8002B8AB8 /* Info.plist */,
 				BC535FA125F2FAE8002B8AB8 /* TMNotes.xcdatamodeld */,
 				BC535FBB25F302CC002B8AB8 /* NotesProvider.swift */,
+				BC49B19325F8AEC000095814 /* NotesFolder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,6 +259,9 @@
 				BC1660E325F30AF100F5D507 /* EditorProvider.swift in Sources */,
 				BC535F9925F2FAE8002B8AB8 /* AppDelegate.swift in Sources */,
 				BC535FB925F30277002B8AB8 /* MainTableView.swift in Sources */,
+				BC49B19425F8AEC000095814 /* NotesFolder.swift in Sources */,
+				BC49B18C25F8A83200095814 /* FoldersTableViewCell.swift in Sources */,
+				BC49B19025F8AA7300095814 /* FolderCollectionViewCell.swift in Sources */,
 				BC49B18825F8963900095814 /* NoteTableViewCell.swift in Sources */,
 				BC535FA325F2FAE8002B8AB8 /* TMNotes.xcdatamodeld in Sources */,
 				BC535F9B25F2FAE8002B8AB8 /* SceneDelegate.swift in Sources */,

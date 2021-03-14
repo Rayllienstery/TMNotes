@@ -21,6 +21,31 @@ class NotesProvider {
         return try? context.fetch(Note.fetchRequest()).filter({$0.trashed == false})
     }
 
+    func getFolders() -> [NotesFolder] {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?
+                .persistentContainer.viewContext else { return [] }
+
+        //Trash folder
+        let trash = NotesFolder()
+        trash.title = "Trash"
+        trash.imagePath = "trash.fill"
+
+        let trashRequest: NSFetchRequest<Note> = Note.fetchRequest()
+        trashRequest.predicate = NSPredicate(format: "trashed == %d", true)
+        trash.notesCount = (try? context.fetch(trashRequest).count) ?? 0
+
+        //StarredFolder
+        let starred = NotesFolder()
+        starred.title = "Starred"
+        starred.imagePath = "star.fill"
+
+        let starredRequest: NSFetchRequest<Note> = Note.fetchRequest()
+        starredRequest.predicate = NSPredicate(format: "starred = %d", true)
+        starred.notesCount = (try? context.fetch(starredRequest).count) ?? 0
+
+        return [trash, starred]
+    }
+
     func addNote(title: String, content: String? = "") {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?
                 .persistentContainer.viewContext else { return }
@@ -61,4 +86,5 @@ class NotesProvider {
         sync(context)
         completion()
     }
+    
 }

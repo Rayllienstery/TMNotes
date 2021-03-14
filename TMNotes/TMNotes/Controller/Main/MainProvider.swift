@@ -11,6 +11,7 @@ extension MainViewController {
     func fetchNotes() {
         self.notes = NotesProvider.shared.getNotes() ?? []
         self.notes.sort(by: {$0.pinned && !$1.pinned})
+        self.folders = NotesProvider.shared.getFolders()
     }
 
     func viewDidAppearCompletion() {
