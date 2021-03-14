@@ -98,10 +98,10 @@ class NotesProvider {
         }
     }
 
-    func markAsTrashed(_ note: Note, completion: @escaping () -> Void) {
+    func markAsTrashed(_ note: Note, status: Bool, completion: @escaping () -> Void) {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?
                 .persistentContainer.viewContext else { return }
-        note.trashed = true
+        note.trashed = status
         sync(context)
         completion()
     }

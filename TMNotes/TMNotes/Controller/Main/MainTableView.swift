@@ -51,19 +51,27 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     -> UISwipeActionsConfiguration? {
         guard indexPath.section == 1 else { return nil }
 
-        let deleteAction = UIContextualAction(style: .normal, title: "Trash") { (_, _, _) in
-            self.trashNote(indexPath: indexPath)
-        }
-        deleteAction.backgroundColor = .systemRed
-        deleteAction.image = UIImage(systemName: "trash")?.withTintColor(.black)
-
         let pinAction = UIContextualAction(style: .normal, title: "Pin") { (_, _, _) in
             self.pinNote(indexPath: indexPath)
         }
         pinAction.backgroundColor = .systemGreen
         pinAction.image = UIImage(systemName: "pin.fill")?.withTintColor(.black)
 
-        return .init(actions: [deleteAction, pinAction])
+        if self.folder != "Trash" {
+            let deleteAction = UIContextualAction(style: .normal, title: "Trash") { (_, _, _) in
+                self.trashNote(indexPath: indexPath)
+            }
+            deleteAction.backgroundColor = .systemRed
+            deleteAction.image = UIImage(systemName: "trash")?.withTintColor(.black)
+            return .init(actions: [deleteAction, pinAction])
+        } else {
+            let restoreAction = UIContextualAction(style: .normal, title: "Trash") { (_, _, _) in
+                self.restoreNote(indexPath: indexPath)
+            }
+            restoreAction.backgroundColor = .orange
+            restoreAction.image = UIImage(systemName: "tray.and.arrow.up")?.withTintColor(.black)
+            return .init(actions: [restoreAction, pinAction])
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

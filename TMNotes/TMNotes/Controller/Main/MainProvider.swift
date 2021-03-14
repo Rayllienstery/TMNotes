@@ -23,7 +23,15 @@ extension MainViewController {
 
     func trashNote(indexPath: IndexPath) {
         guard let note = getNoteFromCell(indexPath: indexPath) else { return }
-        NotesProvider.shared.markAsTrashed(note) {
+        NotesProvider.shared.markAsTrashed(note, status: true) {
+            self.fetchNotes()
+            self.notesListTableView.reloadData()
+        }
+    }
+
+    func restoreNote(indexPath: IndexPath) {
+        guard let note = getNoteFromCell(indexPath: indexPath) else { return }
+        NotesProvider.shared.markAsTrashed(note, status: false) {
             self.fetchNotes()
             self.notesListTableView.reloadData()
         }
