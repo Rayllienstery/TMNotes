@@ -21,11 +21,13 @@ class MainViewController: UIViewController {
         self.initUI()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.prefersLargeTitles = true
+    override func viewDidAppear(_ animated: Bool) {
         navigationItem.largeTitleDisplayMode = .always
+    }
 
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        navigationController?.forceUpdateNavBar()
         self.viewWillAppearCompletion()
     }
 }

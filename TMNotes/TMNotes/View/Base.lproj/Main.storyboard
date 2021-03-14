@@ -17,37 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZi-Ue-0ey">
-                                <rect key="frame" x="0.0" y="814" width="414" height="48"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crR-cs-4lB">
-                                        <rect key="frame" x="374" y="8" width="32" height="32"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1g-Kh-0lD">
-                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="F1g-Kh-0lD" secondAttribute="height" id="jL5-tr-h9q"/>
-                                                </constraints>
-                                                <state key="normal" image="square.and.pencil" catalog="system"/>
-                                                <connections>
-                                                    <segue destination="zt3-bM-ruC" kind="show" id="csr-4V-kDE"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="ebE-7E-wva"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="crR-cs-4lB" firstAttribute="centerY" secondItem="pZi-Ue-0ey" secondAttribute="centerY" id="2SV-8n-cev"/>
-                                    <constraint firstAttribute="trailing" secondItem="crR-cs-4lB" secondAttribute="trailing" constant="8" id="Ee5-ba-80a"/>
-                                    <constraint firstAttribute="height" constant="48" id="Tnm-Ec-Y0B"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WoQ-E2-3dY">
-                                <rect key="frame" x="0.0" y="88" width="414" height="726"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="814"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoldersCell" id="MfW-0M-SGu" customClass="FoldersTableViewCell" customModule="TMNotes" customModuleProvider="target">
@@ -207,6 +178,35 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="z0Z-zk-ZHz"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pZi-Ue-0ey">
+                                <rect key="frame" x="0.0" y="814" width="414" height="48"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crR-cs-4lB">
+                                        <rect key="frame" x="374" y="8" width="32" height="32"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1g-Kh-0lD">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="F1g-Kh-0lD" secondAttribute="height" id="jL5-tr-h9q"/>
+                                                </constraints>
+                                                <state key="normal" image="square.and.pencil" catalog="system"/>
+                                                <connections>
+                                                    <segue destination="zt3-bM-ruC" kind="show" id="csr-4V-kDE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="ebE-7E-wva"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="crR-cs-4lB" firstAttribute="centerY" secondItem="pZi-Ue-0ey" secondAttribute="centerY" id="2SV-8n-cev"/>
+                                    <constraint firstAttribute="trailing" secondItem="crR-cs-4lB" secondAttribute="trailing" constant="8" id="Ee5-ba-80a"/>
+                                    <constraint firstAttribute="height" constant="48" id="Tnm-Ec-Y0B"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -215,12 +215,12 @@
                             <constraint firstItem="pZi-Ue-0ey" firstAttribute="top" secondItem="WoQ-E2-3dY" secondAttribute="bottom" id="AuP-zY-z1s"/>
                             <constraint firstItem="pZi-Ue-0ey" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HEk-5C-u8o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pZi-Ue-0ey" secondAttribute="bottom" id="Q7x-oH-r9D"/>
-                            <constraint firstItem="WoQ-E2-3dY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eXh-WU-Jry"/>
+                            <constraint firstItem="WoQ-E2-3dY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aUd-D3-My7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WoQ-E2-3dY" secondAttribute="trailing" id="pk1-VG-nFq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pZi-Ue-0ey" secondAttribute="trailing" id="rep-mo-3bJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TMNotes" id="lVQ-e7-i6w"/>
+                    <navigationItem key="navigationItem" title="TMNotes" largeTitleDisplayMode="always" id="lVQ-e7-i6w"/>
                     <connections>
                         <outlet property="notesListTableView" destination="WoQ-E2-3dY" id="Xmg-dE-4ef"/>
                     </connections>
@@ -287,7 +287,7 @@
                             <constraint firstItem="PiT-GP-xwm" firstAttribute="trailing" secondItem="3bN-Ec-aXe" secondAttribute="trailing" id="lJk-vN-ZUL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Editor" id="MIu-X5-nKJ"/>
+                    <navigationItem key="navigationItem" title="Editor" largeTitleDisplayMode="never" id="MIu-X5-nKJ"/>
                     <connections>
                         <outlet property="contentTextView" destination="Bm2-xt-XCq" id="HMg-vg-Vj4"/>
                         <outlet property="titleTextView" destination="ECz-nL-Ndp" id="YX8-2b-cdB"/>
@@ -302,8 +302,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tU4-xH-B21" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="keL-FJ-jXi">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="keL-FJ-jXi">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
