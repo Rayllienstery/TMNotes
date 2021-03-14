@@ -217,7 +217,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-ql-5AD">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="69.5"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="123" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ECz-nL-Ndp">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ECz-nL-Ndp">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="35.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
@@ -231,7 +231,7 @@
                                                     <constraint firstAttribute="height" constant="1" id="AQR-E3-xTF"/>
                                                 </constraints>
                                             </view>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="321" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bm2-xt-XCq">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bm2-xt-XCq">
                                                 <rect key="frame" x="0.0" y="36.5" width="414" height="33"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>

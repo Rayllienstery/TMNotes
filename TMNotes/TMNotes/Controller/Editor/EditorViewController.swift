@@ -10,6 +10,8 @@ import UIKit
 class EditorViewController: UIViewController {
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet weak var contentTextView: UITextView!
+    
+    var note: Note?
 
     override func viewDidLoad() {
         super.viewDidLoad()
