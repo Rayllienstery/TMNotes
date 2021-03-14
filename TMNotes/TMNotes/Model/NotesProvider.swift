@@ -24,8 +24,7 @@ class NotesProvider {
             request.predicate = NSPredicate(format: "trashed == %d", true)
         default:
             request.predicate = NSPredicate(format: "trashed == %d", false)
-        }
-            
+        } 
         return try? context.fetch(request)
     }
 
@@ -115,5 +114,4 @@ class NotesProvider {
         sync(context)
         completion()
     }
-    
 }
