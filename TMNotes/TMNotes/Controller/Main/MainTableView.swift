@@ -70,7 +70,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             }
             restoreAction.backgroundColor = .orange
             restoreAction.image = UIImage(systemName: "tray.and.arrow.up")?.withTintColor(.black)
-            return .init(actions: [restoreAction, pinAction])
+            return .init(actions: [restoreAction])
         }
     }
 
