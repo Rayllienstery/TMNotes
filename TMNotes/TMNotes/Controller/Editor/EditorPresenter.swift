@@ -9,13 +9,12 @@ import UIKit
 
 extension EditorViewController {
     func initUI() {
+        self.titleTextView.contentInset = .init(top: 4, left: 8, bottom: 4, right: 8)
+        self.contentTextView.contentInset = .init(top: 4, left: 8, bottom: 4, right: 8)
+        
         if let note = note {
             self.titleTextView.text = note.title
             self.contentTextView.text = note.content
-        } else {
-//            DispatchQueue.main.async {
-//                self.titleTextView.becomeFirstResponder()
-//            }
         }
     }
 

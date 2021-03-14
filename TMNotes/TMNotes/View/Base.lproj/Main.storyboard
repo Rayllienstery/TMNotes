@@ -119,21 +119,21 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" id="MUa-hK-wpe" customClass="NoteTableViewCell" customModule="TMNotes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="148.5" width="414" height="52"/>
+                                        <rect key="frame" x="0.0" y="148.5" width="414" height="58"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MUa-hK-wpe" id="MPv-GB-NJO">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IP0-zs-w1g">
-                                                    <rect key="frame" x="16" y="8" width="63" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="16" y="8" width="73.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQO-OJ-VS0">
-                                                    <rect key="frame" x="16" y="31" width="31" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <rect key="frame" x="16" y="34.5" width="35.5" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -241,27 +241,27 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-ql-5AD">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="69.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ECz-nL-Ndp">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="35.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="36.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joB-ip-aaG">
-                                                <rect key="frame" x="0.0" y="35.5" width="414" height="1"/>
+                                                <rect key="frame" x="0.0" y="36.5" width="414" height="1"/>
                                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="AQR-E3-xTF"/>
                                                 </constraints>
                                             </view>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bm2-xt-XCq">
-                                                <rect key="frame" x="0.0" y="36.5" width="414" height="33"/>
+                                                <rect key="frame" x="0.0" y="37.5" width="414" height="36.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
