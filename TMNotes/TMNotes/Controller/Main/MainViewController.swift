@@ -10,6 +10,7 @@ import CoreData
 
 class MainViewController: UIViewController {
     @IBOutlet weak var notesListTableView: UITableView!
+    @IBOutlet weak var notesCounterLabel: UILabel!
 
     var notes = [Note]()
     var folders = [NotesFolder]()

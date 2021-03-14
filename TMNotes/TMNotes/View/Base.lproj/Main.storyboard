@@ -199,12 +199,20 @@
                                             <constraint firstAttribute="height" constant="32" id="ebE-7E-wva"/>
                                         </constraints>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxZ-vk-gOB">
+                                        <rect key="frame" x="186" y="17" width="42.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="crR-cs-4lB" firstAttribute="centerY" secondItem="pZi-Ue-0ey" secondAttribute="centerY" id="2SV-8n-cev"/>
                                     <constraint firstAttribute="trailing" secondItem="crR-cs-4lB" secondAttribute="trailing" constant="8" id="Ee5-ba-80a"/>
                                     <constraint firstAttribute="height" constant="48" id="Tnm-Ec-Y0B"/>
+                                    <constraint firstItem="dxZ-vk-gOB" firstAttribute="centerY" secondItem="pZi-Ue-0ey" secondAttribute="centerY" id="ZkV-zQ-hpl"/>
+                                    <constraint firstItem="dxZ-vk-gOB" firstAttribute="centerX" secondItem="pZi-Ue-0ey" secondAttribute="centerX" id="fZU-6c-zMc"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -222,6 +230,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="TMNotes" largeTitleDisplayMode="always" id="lVQ-e7-i6w"/>
                     <connections>
+                        <outlet property="notesCounterLabel" destination="dxZ-vk-gOB" id="I1t-0r-Pi3"/>
                         <outlet property="notesListTableView" destination="WoQ-E2-3dY" id="Xmg-dE-4ef"/>
                     </connections>
                 </viewController>

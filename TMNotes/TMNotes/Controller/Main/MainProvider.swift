@@ -18,6 +18,7 @@ extension MainViewController {
         DispatchQueue.main.async {
             self.fetchNotes()
             self.notesListTableView.reloadData()
+            self.notesCounterLabel.text = "\(self.notes.count) notes"
         }
     }
 
