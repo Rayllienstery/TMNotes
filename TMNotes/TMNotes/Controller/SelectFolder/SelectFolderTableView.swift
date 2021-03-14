@@ -18,4 +18,12 @@ extension SelectFolderViewController: UITableViewDelegate, UITableViewDataSource
         cell.setFolder(folders[indexPath.row])
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? SelectFolderTableViewCell else { return }
+        guard let folder = cell.folder else { return }
+        self.selectedFolder = folder.title
+        self.completion?(selectedFolder)
+        self.dismiss(animated: true, completion: nil)
+    }
 }

@@ -117,7 +117,7 @@
                                                     <rect key="frame" x="352" y="-1" width="46" height="30.5"/>
                                                     <state key="normal" title="See all"/>
                                                     <connections>
-                                                        <segue destination="Ryq-Rt-dxe" kind="presentation" id="EqW-qQ-M9U"/>
+                                                        <action selector="openFolderList" destination="BYZ-38-t0r" eventType="touchUpInside" id="SPb-aB-rzG"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -284,13 +284,13 @@
         <!--Folders-->
         <scene sceneID="ByR-Wp-eyF">
             <objects>
-                <viewController id="Ryq-Rt-dxe" customClass="SelectFolderViewController" customModule="TMNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectFolder" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ryq-Rt-dxe" customClass="SelectFolderViewController" customModule="TMNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JuJ-l0-W46">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q8A-3d-H4j">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeT-oa-262">
                                         <rect key="frame" x="373.5" y="8" width="24.5" height="32"/>
@@ -316,7 +316,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CnA-51-Y2Z">
-                                <rect key="frame" x="0.0" y="48" width="414" height="760"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectFolderCell" id="H91-0H-kWC" customClass="SelectFolderTableViewCell" customModule="TMNotes" customModuleProvider="target">
@@ -328,6 +328,7 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ggD-34-Ajd">
                                                     <rect key="frame" x="16" y="17" width="23" height="21.5"/>
+                                                    <color key="tintColor" systemColor="secondaryLabelColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="p8O-QV-cIc"/>
                                                     </constraints>
