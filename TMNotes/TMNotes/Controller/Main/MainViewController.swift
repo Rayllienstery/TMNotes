@@ -22,6 +22,9 @@ class MainViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
+
         super.viewWillAppear(true)
         self.viewWillAppearCompletion()
     }
