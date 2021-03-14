@@ -15,7 +15,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 1
+            return self.folder == nil ? 1 : 0
         case 1:
             return self.notes.count
         default:

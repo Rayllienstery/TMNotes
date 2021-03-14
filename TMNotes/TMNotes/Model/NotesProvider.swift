@@ -15,10 +15,18 @@ enum NotesProviderValues: String {
 class NotesProvider {
     public static let shared = NotesProvider()
 
-    func getNotes() -> [Note]? {
+    func getNotes(folder: String?) -> [Note]? {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?
                 .persistentContainer.viewContext else { return nil }
-        return try? context.fetch(Note.fetchRequest()).filter({$0.trashed == false})
+        let request: NSFetchRequest<Note> = Note.fetchRequest()
+        switch folder {
+        case "Trash":
+            request.predicate = NSPredicate(format: "trashed == %d", true)
+        default:
+            request.predicate = NSPredicate(format: "trashed == %d", false)
+        }
+            
+        return try? context.fetch(request)
     }
 
     func getFolders() -> [NotesFolder] {
@@ -52,6 +60,9 @@ class NotesProvider {
         let note = Note(context: context)
         note.title = title
         note.content = content
+        note.trashed = false
+        note.starred = false
+        note.pinned = false
         note.id = Int64(updateLatestIdWithGet())
         self.sync(context)
     }
@@ -64,7 +75,7 @@ class NotesProvider {
             self.sync(context)
             return
         } else if let noteId = noteId,
-                  let notes = getNotes(),
+                  let notes = getNotes(folder: nil),
                   let note = notes.first(where: { $0.id == noteId }) {
             context.delete(note)
             self.sync(context)

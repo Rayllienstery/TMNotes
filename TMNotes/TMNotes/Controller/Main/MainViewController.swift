@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewController: UIViewController {
     @IBOutlet weak var notesListTableView: UITableView!
@@ -13,8 +14,11 @@ class MainViewController: UIViewController {
     var notes = [Note]()
     var folders = [NotesFolder]()
 
+    var folder: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.initUI()
     }
 
     override func viewWillAppear(_ animated: Bool) {

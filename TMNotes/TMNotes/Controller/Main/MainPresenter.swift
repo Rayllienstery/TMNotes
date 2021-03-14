@@ -8,6 +8,10 @@
 import Foundation
 
 extension MainViewController {
+    func initUI() {
+        self.title = folder ?? "Notes"
+    }
+
     func updateUI() {
 
     }

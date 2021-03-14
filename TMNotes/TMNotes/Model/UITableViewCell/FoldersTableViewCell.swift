@@ -48,4 +48,13 @@ extension FoldersTableViewCell: UICollectionViewDelegate,
             width: collectionView.frame.height * 1.4,
             height: collectionView.frame.height)
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? FolderCollectionViewCell else { return }
+        guard let folder = cell.folder else { return }
+        guard let navigation = UIApplication.shared.keyWindow?
+                .rootViewController as? UINavigationController else { return }
+
+        MainRouter.call(to: navigation, folder: folder.title, true)
+    }
 }

@@ -26,6 +26,7 @@
 		BC535FBF25F30475002B8AB8 /* MainProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC535FBE25F30475002B8AB8 /* MainProvider.swift */; };
 		BC535FC225F304B9002B8AB8 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC535FC125F304B9002B8AB8 /* MainPresenter.swift */; };
 		BCF42CC625FE234200D122E1 /* EditorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF42CC525FE234200D122E1 /* EditorRouter.swift */; };
+		BCF91F2D25FE270B00913ADD /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF91F2C25FE270B00913ADD /* MainRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		BC535FBE25F30475002B8AB8 /* MainProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProvider.swift; sourceTree = "<group>"; };
 		BC535FC125F304B9002B8AB8 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		BCF42CC525FE234200D122E1 /* EditorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorRouter.swift; sourceTree = "<group>"; };
+		BCF91F2C25FE270B00913ADD /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				BC535FB825F30277002B8AB8 /* MainTableView.swift */,
 				BC535FBE25F30475002B8AB8 /* MainProvider.swift */,
 				BC535FC125F304B9002B8AB8 /* MainPresenter.swift */,
+				BCF91F2C25FE270B00913ADD /* MainRouter.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				BC1660E625F30AFC00F5D507 /* EditorPresenter.swift in Sources */,
 				BC535FBC25F302CC002B8AB8 /* NotesProvider.swift in Sources */,
 				BC1660E025F30A0F00F5D507 /* EditorViewController.swift in Sources */,
+				BCF91F2D25FE270B00913ADD /* MainRouter.swift in Sources */,
 				BC535FBF25F30475002B8AB8 /* MainProvider.swift in Sources */,
 				BC535F9D25F2FAE8002B8AB8 /* MainViewController.swift in Sources */,
 				BCF42CC625FE234200D122E1 /* EditorRouter.swift in Sources */,
