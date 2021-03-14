@@ -56,6 +56,22 @@ class NotesProvider {
         self.sync(context)
     }
 
+    func deleteNote(_ note: Note?, _ noteId: Int64?) {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?
+                .persistentContainer.viewContext else { return }
+        if let note = note {
+            context.delete(note)
+            self.sync(context)
+            return
+        } else if let noteId = noteId,
+                  let notes = getNotes(),
+                  let note = notes.first(where: { $0.id == noteId }) {
+            context.delete(note)
+            self.sync(context)
+            return
+        }
+    }
+
     func updateLatestIdWithGet() -> Int {
         var noteId = UserDefaults.standard.integer(forKey: NotesProviderValues.latestNoteId.rawValue)
         noteId += 1

@@ -17,8 +17,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        self.viewDidAppearCompletion()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.viewWillAppearCompletion()
     }
 }

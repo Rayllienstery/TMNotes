@@ -65,4 +65,17 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
 
         return .init(actions: [deleteAction, pinAction])
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            return
+        case 1:
+            if let cell = tableView.cellForRow(at: indexPath) as? NoteTableViewCell, let note = cell.note {
+                EditorRouter.call(to: self.navigationController!, note: note, true)
+            }
+        default:
+            return
+        }
+    }
 }

@@ -14,9 +14,11 @@ extension MainViewController {
         self.folders = NotesProvider.shared.getFolders()
     }
 
-    func viewDidAppearCompletion() {
-        self.fetchNotes()
-        self.notesListTableView.reloadData()
+    func viewWillAppearCompletion() {
+        DispatchQueue.main.async {
+            self.fetchNotes()
+            self.notesListTableView.reloadData()
+        }
     }
 
     func trashNote(indexPath: IndexPath) {

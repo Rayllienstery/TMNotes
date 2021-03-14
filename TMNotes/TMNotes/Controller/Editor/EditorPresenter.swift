@@ -18,4 +18,10 @@ extension EditorViewController {
             }
         }
     }
+    
+    func showErrorSyncAlert() {
+        let alert = UIAlertController(title: "Oops", message: "Comething was wrong with note save", preferredStyle: .alert)
+        alert.addAction(.init(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

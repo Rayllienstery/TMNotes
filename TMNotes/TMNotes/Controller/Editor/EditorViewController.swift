@@ -10,7 +10,7 @@ import UIKit
 class EditorViewController: UIViewController {
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet weak var contentTextView: UITextView!
-    
+
     var note: Note?
 
     override func viewDidLoad() {
@@ -18,8 +18,8 @@ class EditorViewController: UIViewController {
         self.initUI()
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         saveNoteIfNecessary()
-        super.viewDidDisappear(true)
+        super.viewWillDisappear(true)
     }
 }
