@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -200,7 +201,9 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="F1g-Kh-0lD" secondAttribute="height" id="jL5-tr-h9q"/>
                                                 </constraints>
-                                                <state key="normal" image="square.and.pencil" catalog="system"/>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="square.and.pencil" catalog="system" symbolScale="large"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="zt3-bM-ruC" kind="show" id="csr-4V-kDE"/>
                                                 </connections>
