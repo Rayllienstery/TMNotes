@@ -102,6 +102,8 @@ class NotesProvider {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?
                 .persistentContainer.viewContext else { return }
         note.trashed = status
+        note.starred = false
+        note.pinned = false
         sync(context)
         completion()
     }

@@ -17,19 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WoQ-E2-3dY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WoQ-E2-3dY">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="814"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoldersCell" id="MfW-0M-SGu" customClass="FoldersTableViewCell" customModule="TMNotes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="120.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MfW-0M-SGu" id="ZMj-jh-vtu">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9f4-q6-GOh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="120" id="3pc-Ws-cr1"/>
@@ -42,7 +42,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FolderCell" id="543-IS-l7k" customClass="FolderCollectionViewCell" customModule="TMNotes" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.5" width="180" height="120"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="120"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="79d-5l-wyx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="120"/>
@@ -119,10 +119,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" id="MUa-hK-wpe" customClass="NoteTableViewCell" customModule="TMNotes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="148.5" width="414" height="58"/>
+                                        <rect key="frame" x="0.0" y="148" width="414" height="57.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MUa-hK-wpe" id="MPv-GB-NJO">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="57.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IP0-zs-w1g">
@@ -153,9 +153,17 @@
                                                         <constraint firstItem="398-t8-UzP" firstAttribute="width" secondItem="398-t8-UzP" secondAttribute="height" id="dXv-lN-ofA"/>
                                                     </constraints>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sOX-ze-1Wi">
+                                                    <rect key="frame" x="16" y="56.5" width="398" height="1"/>
+                                                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="bqV-U8-WVd"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="sQO-OJ-VS0" firstAttribute="top" secondItem="IP0-zs-w1g" secondAttribute="bottom" constant="6" id="2Ss-Kq-WfD"/>
+                                                <constraint firstItem="sOX-ze-1Wi" firstAttribute="leading" secondItem="IP0-zs-w1g" secondAttribute="leading" id="Bvd-2K-Oqw"/>
                                                 <constraint firstItem="IP0-zs-w1g" firstAttribute="leading" secondItem="MPv-GB-NJO" secondAttribute="leading" constant="16" id="G9P-DZ-26Z"/>
                                                 <constraint firstAttribute="trailing" secondItem="ahO-J4-9Od" secondAttribute="trailing" constant="16" id="Npt-vS-UWu"/>
                                                 <constraint firstItem="ahO-J4-9Od" firstAttribute="top" secondItem="MPv-GB-NJO" secondAttribute="top" constant="12" id="UNl-He-CV5"/>
@@ -163,7 +171,9 @@
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sQO-OJ-VS0" secondAttribute="trailing" constant="12" id="bN8-mY-wPH"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="sQO-OJ-VS0" secondAttribute="bottom" constant="6" id="dt3-cS-3h2"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IP0-zs-w1g" secondAttribute="trailing" constant="12" id="gHL-89-Byz"/>
+                                                <constraint firstAttribute="bottom" secondItem="sOX-ze-1Wi" secondAttribute="bottom" id="ryR-xL-Bik"/>
                                                 <constraint firstItem="IP0-zs-w1g" firstAttribute="top" secondItem="MPv-GB-NJO" secondAttribute="top" constant="8" id="sVx-ck-Ngx"/>
+                                                <constraint firstAttribute="trailing" secondItem="sOX-ze-1Wi" secondAttribute="trailing" id="sxX-Oj-9Lw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
