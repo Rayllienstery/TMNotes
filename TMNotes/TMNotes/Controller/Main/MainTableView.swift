@@ -9,7 +9,7 @@ import UIKit
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -17,6 +17,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             return self.folder == nil ? 1 : 0
         case 1:
+            return 1
+        case 2:
             return self.notes.count
         default:
             return 0
@@ -33,6 +35,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             cell.setFolders(self.folders)
             return cell
         case 1:
+            return UITableViewCell()
+        case 2:
             guard let cell = tableView.dequeueReusableCell(
                     withIdentifier: "NoteCell") as? NoteTableViewCell
             else { fatalError("Missing NoteTableViewCell") }

@@ -137,8 +137,81 @@
                                             <outlet property="foldersCollectionView" destination="9f4-q6-GOh" id="VWA-cb-CaF"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TagsListCell" id="hRy-az-mlK">
+                                        <rect key="frame" x="0.0" y="176.5" width="414" height="85.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hRy-az-mlK" id="577-qf-RYY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="85.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hs-id-AlS">
+                                                    <rect key="frame" x="20" y="11" width="36" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDl-Ec-SSE">
+                                                    <rect key="frame" x="352" y="6.5" width="46" height="30"/>
+                                                    <state key="normal" title="See all"/>
+                                                </button>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yq1-GO-gRR" customClass="TagsList">
+                                                    <rect key="frame" x="0.0" y="37.5" width="414" height="48"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="tVV-lV-3gd"/>
+                                                    </constraints>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MXh-nF-srl">
+                                                        <size key="itemSize" width="94" height="32"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagsListCell" id="ePL-5j-rky" customClass="TagsListCollectionViewCell" customModule="TMNotes" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="9.5" width="51.5" height="29"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6i1-ik-LXu">
+                                                                <rect key="frame" x="0.0" y="0.0" width="51.5" height="29"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxK-qU-Ofg">
+                                                                        <rect key="frame" x="8" y="6" width="35.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <color key="backgroundColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="DxK-qU-Ofg" secondAttribute="trailing" constant="8" id="656-2g-dJa"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="DxK-qU-Ofg" secondAttribute="bottom" constant="6" id="Ec0-cB-k73"/>
+                                                                    <constraint firstItem="DxK-qU-Ofg" firstAttribute="top" secondItem="6i1-ik-LXu" secondAttribute="top" constant="6" id="Uxo-Nr-qbh"/>
+                                                                    <constraint firstItem="DxK-qU-Ofg" firstAttribute="leading" secondItem="6i1-ik-LXu" secondAttribute="leading" constant="8" id="sNf-I5-BXx"/>
+                                                                </constraints>
+                                                            </collectionViewCellContentView>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="titleLabel" destination="DxK-qU-Ofg" id="hAb-4x-38U"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="oDl-Ec-SSE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3hs-id-AlS" secondAttribute="trailing" constant="8" id="5Pl-zV-UWg"/>
+                                                <constraint firstAttribute="trailing" secondItem="oDl-Ec-SSE" secondAttribute="trailing" constant="16" id="5yr-97-20E"/>
+                                                <constraint firstItem="3hs-id-AlS" firstAttribute="top" secondItem="577-qf-RYY" secondAttribute="topMargin" id="DG8-yt-wDm"/>
+                                                <constraint firstItem="3hs-id-AlS" firstAttribute="leading" secondItem="577-qf-RYY" secondAttribute="leadingMargin" id="Jpz-nq-Dzk"/>
+                                                <constraint firstItem="Yq1-GO-gRR" firstAttribute="leading" secondItem="577-qf-RYY" secondAttribute="leading" id="Xvb-ca-aHZ"/>
+                                                <constraint firstItem="oDl-Ec-SSE" firstAttribute="centerY" secondItem="3hs-id-AlS" secondAttribute="centerY" id="adX-xI-ueX"/>
+                                                <constraint firstItem="Yq1-GO-gRR" firstAttribute="top" secondItem="3hs-id-AlS" secondAttribute="bottom" constant="6" id="kSY-wD-iVn"/>
+                                                <constraint firstAttribute="bottom" secondItem="Yq1-GO-gRR" secondAttribute="bottom" id="lfk-Bf-Waa"/>
+                                                <constraint firstAttribute="trailing" secondItem="Yq1-GO-gRR" secondAttribute="trailing" id="tgP-RP-vm4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" id="MUa-hK-wpe" customClass="NoteTableViewCell" customModule="TMNotes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="176.5" width="414" height="57.5"/>
+                                        <rect key="frame" x="0.0" y="262" width="414" height="57.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MUa-hK-wpe" id="MPv-GB-NJO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="57.5"/>
@@ -403,24 +476,24 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-ql-5AD">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="77.5"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ECz-nL-Ndp">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="36.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joB-ip-aaG">
-                                                <rect key="frame" x="0.0" y="36.5" width="414" height="1"/>
+                                                <rect key="frame" x="0.0" y="40" width="414" height="1"/>
                                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="AQR-E3-xTF"/>
                                                 </constraints>
                                             </view>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bm2-xt-XCq">
-                                                <rect key="frame" x="0.0" y="37.5" width="414" height="36.5"/>
+                                                <rect key="frame" x="0.0" y="41" width="414" height="36.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>

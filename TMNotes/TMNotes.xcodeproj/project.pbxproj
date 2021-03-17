@@ -30,6 +30,7 @@
 		BCBB1FF625FE458C00A061AF /* SelectFolderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB1FF425FE458C00A061AF /* SelectFolderTableView.swift */; };
 		BCBB1FFA25FE45FF00A061AF /* SelectFolderProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB1FF925FE45FF00A061AF /* SelectFolderProvider.swift */; };
 		BCBB1FFD25FE462600A061AF /* SelectFolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB1FFC25FE462600A061AF /* SelectFolderTableViewCell.swift */; };
+		BCBB200425FE659700A061AF /* TagsListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB200325FE659700A061AF /* TagsListCollectionViewCell.swift */; };
 		BCF42CC625FE234200D122E1 /* EditorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF42CC525FE234200D122E1 /* EditorRouter.swift */; };
 		BCF91F2D25FE270B00913ADD /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF91F2C25FE270B00913ADD /* MainRouter.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +61,7 @@
 		BCBB1FF425FE458C00A061AF /* SelectFolderTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFolderTableView.swift; sourceTree = "<group>"; };
 		BCBB1FF925FE45FF00A061AF /* SelectFolderProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFolderProvider.swift; sourceTree = "<group>"; };
 		BCBB1FFC25FE462600A061AF /* SelectFolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFolderTableViewCell.swift; sourceTree = "<group>"; };
+		BCBB200325FE659700A061AF /* TagsListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsListCollectionViewCell.swift; sourceTree = "<group>"; };
 		BCF42CC525FE234200D122E1 /* EditorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorRouter.swift; sourceTree = "<group>"; };
 		BCF91F2C25FE270B00913ADD /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				BC49B18F25F8AA7300095814 /* FolderCollectionViewCell.swift */,
+				BCBB200325FE659700A061AF /* TagsListCollectionViewCell.swift */,
 			);
 			path = UICollectionViewCell;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				BC535FBF25F30475002B8AB8 /* MainProvider.swift in Sources */,
 				BCBB1FF525FE458C00A061AF /* SelectFolderViewController.swift in Sources */,
 				BC535F9D25F2FAE8002B8AB8 /* MainViewController.swift in Sources */,
+				BCBB200425FE659700A061AF /* TagsListCollectionViewCell.swift in Sources */,
 				BCF42CC625FE234200D122E1 /* EditorRouter.swift in Sources */,
 				BC535FC225F304B9002B8AB8 /* MainPresenter.swift in Sources */,
 				BC1660E325F30AF100F5D507 /* EditorProvider.swift in Sources */,
