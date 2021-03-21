@@ -189,11 +189,11 @@
                                                                     <constraint firstItem="DxK-qU-Ofg" firstAttribute="leading" secondItem="6i1-ik-LXu" secondAttribute="leading" constant="8" id="sNf-I5-BXx"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
+                                                            <connections>
+                                                                <outlet property="titleLabel" destination="DxK-qU-Ofg" id="6q7-YI-fhp"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
-                                                    <connections>
-                                                        <outlet property="titleLabel" destination="DxK-qU-Ofg" id="hAb-4x-38U"/>
-                                                    </connections>
                                                 </collectionView>
                                             </subviews>
                                             <constraints>
@@ -331,21 +331,31 @@
                                     <constraint firstItem="dxZ-vk-gOB" firstAttribute="centerX" secondItem="pZi-Ue-0ey" secondAttribute="centerX" id="fZU-6c-zMc"/>
                                 </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looks empty Maybe, we can add something?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scf-Vi-Ndl">
+                                <rect key="frame" x="16" y="427.5" width="382" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="WoQ-E2-3dY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0mh-97-qx7"/>
+                            <constraint firstItem="scf-Vi-Ndl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Bp-3r-fYm"/>
                             <constraint firstItem="pZi-Ue-0ey" firstAttribute="top" secondItem="WoQ-E2-3dY" secondAttribute="bottom" id="AuP-zY-z1s"/>
                             <constraint firstItem="pZi-Ue-0ey" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HEk-5C-u8o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pZi-Ue-0ey" secondAttribute="bottom" id="Q7x-oH-r9D"/>
                             <constraint firstItem="WoQ-E2-3dY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aUd-D3-My7"/>
+                            <constraint firstItem="scf-Vi-Ndl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hwk-Za-LfI"/>
+                            <constraint firstItem="scf-Vi-Ndl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="pEI-lT-WYM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WoQ-E2-3dY" secondAttribute="trailing" id="pk1-VG-nFq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pZi-Ue-0ey" secondAttribute="trailing" id="rep-mo-3bJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TMNotes" largeTitleDisplayMode="always" id="lVQ-e7-i6w"/>
                     <connections>
+                        <outlet property="emptyLabel" destination="scf-Vi-Ndl" id="0eV-2l-JLf"/>
                         <outlet property="notesCounterLabel" destination="dxZ-vk-gOB" id="I1t-0r-Pi3"/>
                         <outlet property="notesListTableView" destination="WoQ-E2-3dY" id="Xmg-dE-4ef"/>
                     </connections>
@@ -473,7 +483,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bN-Ec-aXe">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="726"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-ql-5AD">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="77.5"/>
@@ -502,6 +512,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="gxn-ql-5AD" secondAttribute="trailing" id="C54-HE-7xR"/>
                                     <constraint firstItem="gxn-ql-5AD" firstAttribute="top" secondItem="3bN-Ec-aXe" secondAttribute="top" id="RH1-4A-Keb"/>
@@ -511,19 +522,33 @@
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="cvb-Z7-zpb"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="x5T-S2-yt0"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zt3-bM-ruC" id="7Sh-FP-hrc"/>
+                                </connections>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5KO-d1-sBq">
+                                <rect key="frame" x="0.0" y="814" width="414" height="48"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="H6H-5Y-ikC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PiT-GP-xwm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3bN-Ec-aXe" firstAttribute="leading" secondItem="PiT-GP-xwm" secondAttribute="leading" id="7B8-Y5-E9h"/>
                             <constraint firstItem="3bN-Ec-aXe" firstAttribute="top" secondItem="PiT-GP-xwm" secondAttribute="top" id="GcC-gw-gk0"/>
-                            <constraint firstItem="PiT-GP-xwm" firstAttribute="bottom" secondItem="3bN-Ec-aXe" secondAttribute="bottom" id="Pmr-0f-vvk"/>
+                            <constraint firstItem="PiT-GP-xwm" firstAttribute="trailing" secondItem="5KO-d1-sBq" secondAttribute="trailing" id="HIB-8R-equ"/>
+                            <constraint firstItem="5KO-d1-sBq" firstAttribute="leading" secondItem="PiT-GP-xwm" secondAttribute="leading" id="Wy0-6a-pha"/>
+                            <constraint firstItem="PiT-GP-xwm" firstAttribute="bottom" secondItem="5KO-d1-sBq" secondAttribute="bottom" id="ZBe-iG-RBS"/>
                             <constraint firstItem="PiT-GP-xwm" firstAttribute="trailing" secondItem="3bN-Ec-aXe" secondAttribute="trailing" id="lJk-vN-ZUL"/>
+                            <constraint firstItem="5KO-d1-sBq" firstAttribute="top" secondItem="3bN-Ec-aXe" secondAttribute="bottom" id="nsm-aW-P9J"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Editor" largeTitleDisplayMode="never" id="MIu-X5-nKJ"/>
                     <connections>
+                        <outlet property="containerScrollView" destination="3bN-Ec-aXe" id="4fF-qn-jXo"/>
                         <outlet property="contentTextView" destination="Bm2-xt-XCq" id="HMg-vg-Vj4"/>
                         <outlet property="titleTextView" destination="ECz-nL-Ndp" id="YX8-2b-cdB"/>
                     </connections>

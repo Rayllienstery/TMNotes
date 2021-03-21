@@ -19,6 +19,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         case 1:
             return 1
         case 2:
+            emptyLabel.isHidden = notes.count > 0
             return self.notes.count
         default:
             return 0
