@@ -9,7 +9,7 @@ import UIKit
 
 class FoldersTableViewCell: UITableViewCell {
     @IBOutlet weak var foldersCollectionView: UICollectionView!
-    var folders = [NotesFolder]()
+    var folders = [Folder]()
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -19,7 +19,7 @@ class FoldersTableViewCell: UITableViewCell {
         }
     }
 
-    func setFolders(_ folders: [NotesFolder]) {
+    func setFolders(_ folders: [Folder]) {
         self.folders = folders
         self.foldersCollectionView.reloadData()
     }

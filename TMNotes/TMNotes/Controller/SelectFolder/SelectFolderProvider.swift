@@ -8,8 +8,15 @@
 import Foundation
 
 extension SelectFolderViewController {
+    func initProvider() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateFolders), name: .foldersUpdated, object: nil)
+
+        updateFoldersList()
+    }
+
     func updateFoldersList() {
-        self.folders = NotesProvider.shared.getFolders()
+        self.folders = FoldersProvider.shared.getFolders()
         self.foldersTableView.reloadData()
     }
 }

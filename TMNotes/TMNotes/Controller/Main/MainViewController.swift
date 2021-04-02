@@ -9,11 +9,12 @@ import UIKit
 import CoreData
 
 class MainViewController: UIViewController {
+    @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var notesListTableView: UITableView!
     @IBOutlet weak var notesCounterLabel: UILabel!
 
     var notes = [Note]()
-    var folders = [NotesFolder]()
+    var folders = [Folder]()
 
     var folder: String?
 
@@ -28,7 +29,6 @@ class MainViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        navigationController?.forceUpdateNavBar()
         self.viewWillAppearCompletion()
     }
 

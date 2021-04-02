@@ -17,7 +17,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         case 0:
             return self.folder == nil ? 1 : 0
         case 1:
-            return 1
+            return self.folder == nil ? 1 : 0
         case 2:
             emptyLabel.isHidden = notes.count > 0
             return self.notes.count
@@ -36,7 +36,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             cell.setFolders(self.folders)
             return cell
         case 1:
-            return UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TagsListCell")!
+            return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(
                     withIdentifier: "NoteCell") as? NoteTableViewCell
@@ -54,7 +55,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         _ tableView: UITableView,
         trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
     -> UISwipeActionsConfiguration? {
-        guard indexPath.section == 1 else { return nil }
+        guard indexPath.section == 2 else { return nil }
 
         let pinAction = UIContextualAction(style: .normal, title: "Pin") { (_, _, _) in
             self.pinNote(indexPath: indexPath)
@@ -65,7 +66,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         let starAction = UIContextualAction(style: .normal, title: "Star") { _, _, _ in
             self.starNote(indexPath: indexPath)
         }
-        starAction.backgroundColor = .yellow
+        starAction.backgroundColor = .systemOrange
+        starAction.image = UIImage(systemName: "star.fill")
 
         if self.folder != "Trash" {
             let deleteAction = UIContextualAction(style: .normal, title: "Trash") { (_, _, _) in
@@ -88,7 +90,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         switch indexPath.section {
         case 0:
             return
-        case 1:
+        case 2:
             if let cell = tableView.cellForRow(at: indexPath) as? NoteTableViewCell, let note = cell.note {
                 EditorRouter.call(to: self.navigationController!, note: note, true)
             }

@@ -9,5 +9,5 @@ import UIKit
 
 class TagsListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
-    
+
 }
