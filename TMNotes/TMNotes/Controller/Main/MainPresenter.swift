@@ -9,7 +9,7 @@ import Foundation
 
 extension MainViewController {
     func initUI() {
-        self.title = folder ?? "Notes"
+        self.title = folder?.title ?? "Notes"
     }
 
     @objc func updateUI() {

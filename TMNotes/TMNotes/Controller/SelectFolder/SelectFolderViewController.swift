@@ -10,8 +10,8 @@ import UIKit
 class SelectFolderViewController: UIViewController {
     @IBOutlet weak var foldersTableView: UITableView!
     var folders = [Folder]()
-    var selectedFolder: String?
-    var completion: ((String?) -> Void)?
+    var selectedFolder: Folder?
+    var completion: ((Folder?) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()

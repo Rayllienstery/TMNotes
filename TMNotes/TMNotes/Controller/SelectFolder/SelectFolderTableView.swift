@@ -22,7 +22,7 @@ extension SelectFolderViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? SelectFolderTableViewCell else { return }
         guard let folder = cell.folder else { return }
-        self.selectedFolder = folder.title
+        self.selectedFolder = folder
         self.completion?(selectedFolder)
         self.dismiss(animated: true, completion: nil)
     }

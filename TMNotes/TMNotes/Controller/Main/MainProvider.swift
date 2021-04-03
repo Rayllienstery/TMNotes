@@ -5,7 +5,7 @@
 //  Created by Raylee on 06.03.2021.
 //
 
-import Foundation
+import UIKit
 
 extension MainViewController {
     func initProvider() {
@@ -63,5 +63,17 @@ extension MainViewController {
         guard let cell = notesListTableView.cellForRow(at: indexPath) as? NoteTableViewCell else { return nil }
         guard let note = cell.note else { return nil }
         return note
+    }
+
+    func openAddToFolderScene(note: Note) {
+        guard let view = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+                .instantiateViewController(withIdentifier: "SelectFolder")
+                as? SelectFolderViewController else { return }
+        view.completion = { folder in
+            if let folder = folder {
+                folder.add(note: note)
+            }
+        }
+        self.present(view, animated: true, completion: nil)
     }
 }

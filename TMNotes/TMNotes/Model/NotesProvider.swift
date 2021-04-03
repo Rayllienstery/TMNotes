@@ -15,19 +15,30 @@ enum NotesProviderValues: String {
 class NotesProvider {
     public static let shared = NotesProvider()
 
-    func getNotes(folder: String?) -> [Note]? {
+    func getNotes(folder: Folder?) -> [Note]? {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?
                 .persistentContainer.viewContext else { return nil }
         let request: NSFetchRequest<Note> = Note.fetchRequest()
-        switch folder {
+        switch folder?.title {
         case "Trash":
             request.predicate = NSPredicate(format: "trashed == %d", true)
+            return try? context.fetch(request)
         case "Starred":
             request.predicate = NSPredicate(format: "starred == %d", true)
+            return try? context.fetch(request)
         default:
-            break
+            guard let notes = try? context.fetch(request) as? [Note] else { return nil }
+            if folder == nil {
+                return notes
+            } else {
+                guard let notesData = folder?.notes else { return nil }
+                guard let notesList = (try? JSONSerialization.jsonObject(with: notesData, options: [])) as? [Int64] else { return nil }
+                return notes.filter { note -> Bool in
+                    notesList.contains(note.id)
+                }
+            }
         }
-        return try? context.fetch(request)
+        
     }
 
     func addNote(title: String, content: String? = "") {

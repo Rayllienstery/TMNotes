@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
     var notes = [Note]()
     var folders = [Folder]()
 
-    var folder: String?
+    var folder: Folder?
 
     override func viewDidLoad() {
         super.viewDidLoad()

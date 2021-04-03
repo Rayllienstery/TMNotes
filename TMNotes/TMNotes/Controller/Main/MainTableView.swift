@@ -69,7 +69,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         starAction.backgroundColor = .systemOrange
         starAction.image = UIImage(systemName: "star.fill")
 
-        if self.folder != "Trash" {
+        if self.folder?.title != "Trash" {
             let deleteAction = UIContextualAction(style: .normal, title: "Trash") { (_, _, _) in
                 self.trashNote(indexPath: indexPath)
             }
@@ -84,6 +84,19 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             restoreAction.image = UIImage(systemName: "tray.and.arrow.up")?.withTintColor(.black)
             return .init(actions: [restoreAction])
         }
+    }
+
+    func tableView(_ tableView: UITableView,
+                   leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard self.folder?.title != "Trash" else { return nil }
+        let folderAction = UIContextualAction(style: .normal, title: "Add to folder") { _, _, _ in
+            guard let note = self.getNoteFromCell(indexPath: indexPath) else { return }
+            self.openAddToFolderScene(note: note)
+        }
+        folderAction.backgroundColor = .systemBlue
+        folderAction.image = UIImage(systemName: "folder.fill.badge.plus")
+
+        return .init(actions: [folderAction])
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

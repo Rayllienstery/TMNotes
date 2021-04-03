@@ -9,7 +9,7 @@ import UIKit
 
 class MainRouter {
 
-    class func call(to navigationController: UINavigationController, folder: String? = nil, _ animated: Bool) {
+    class func call(to navigationController: UINavigationController, folder: Folder? = nil, _ animated: Bool) {
         let view = UIStoryboard.init(name: "Main",
                                      bundle: Bundle.main).instantiateViewController(withIdentifier: "Main")
             as? MainViewController

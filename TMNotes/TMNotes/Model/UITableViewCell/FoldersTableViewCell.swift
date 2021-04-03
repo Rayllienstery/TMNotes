@@ -55,6 +55,6 @@ extension FoldersTableViewCell: UICollectionViewDelegate,
         guard let navigation = UIApplication.shared.keyWindow?
                 .rootViewController as? UINavigationController else { return }
 
-        MainRouter.call(to: navigation, folder: folder.title, true)
+        MainRouter.call(to: navigation, folder: folder, true)
     }
 }
