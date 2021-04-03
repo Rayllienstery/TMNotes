@@ -12,7 +12,10 @@ extension MainViewController {
         self.title = folder ?? "Notes"
     }
 
-    func updateUI() {
-
+    @objc func updateUI() {
+        DispatchQueue.main.async {
+            self.fetchNotes()
+            self.notesListTableView.reloadData()
+        }
     }
 }

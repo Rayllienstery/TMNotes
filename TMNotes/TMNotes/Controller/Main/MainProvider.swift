@@ -8,7 +8,12 @@
 import Foundation
 
 extension MainViewController {
-    func fetchNotes() {
+    func initProvider() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateUI), name: .foldersUpdated, object: nil)
+    }
+
+     func fetchNotes() {
         self.notes = NotesProvider.shared.getNotes(folder: folder) ?? []
         self.notes.sort(by: {$0.pinned && !$1.pinned})
         self.folders = FoldersProvider.shared.getFolders()
