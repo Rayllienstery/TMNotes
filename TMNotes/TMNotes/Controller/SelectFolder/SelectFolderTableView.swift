@@ -27,4 +27,22 @@ extension SelectFolderViewController: UITableViewDelegate, UITableViewDataSource
         self.dismiss(animated: true, completion: nil)
     }
 
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        guard let cell = tableView.cellForRow(at: indexPath) as? SelectFolderTableViewCell,
+              cell.folder?.title != "Trash",
+              cell.folder?.title != "Starred"
+              else {
+            return nil
+        }
+
+        let removeFolderAction = UIContextualAction(style: .normal, title: "Delete") { (_, _, _) in
+            guard let folder = cell.folder else { return }
+            self.present(FoldersProvider.shared.deleteFolderAlert(folder: folder), animated: true, completion: nil)
+        }
+        removeFolderAction.backgroundColor = .systemRed
+        removeFolderAction.image = UIImage(systemName: "folder.badge.minus")?.withTintColor(.black)
+
+        return .init(actions: [removeFolderAction])
+    }
 }

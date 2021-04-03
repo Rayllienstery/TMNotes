@@ -25,7 +25,7 @@ class NotesProvider {
         case "Starred":
             request.predicate = NSPredicate(format: "starred == %d", true)
         default:
-            request.predicate = NSPredicate(format: "trashed == %d", false)
+            break
         }
         return try? context.fetch(request)
     }

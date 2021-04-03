@@ -10,10 +10,11 @@ import CoreData
 
 class FoldersProvider {
     public static let shared = FoldersProvider()
-    
+
     init() {
         initBasicFoldersIfNecessary()
     }
+
     func getFolders() -> [Folder] {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?
                 .persistentContainer.viewContext else { return [] }
@@ -82,6 +83,22 @@ class FoldersProvider {
 
         context.delete(folder)
         sync(context)
+        NotificationCenter.default.post(name: .foldersUpdated, object: nil)
+    }
+
+    func deleteFolderAlert(folder: Folder) -> UIAlertController {
+        let alert = UIAlertController(title: "Are you sure?",
+                                      message: """
+Folder \(folder.title ?? "will be removed").
+\nNotes that were in this folder will not be deleted.
+""",
+                                      preferredStyle: .alert)
+        alert.addAction(.init(title: "Yes", style: .destructive, handler: { _ in
+            self.delete(folder: folder)
+        }))
+        alert.addAction(.init(title: "No", style: .cancel, handler: nil))
+
+        return alert
     }
 
     func sync(_ context: NSManagedObjectContext) {

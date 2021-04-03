@@ -20,7 +20,7 @@ extension Folder {
         case "Trash":
             request.predicate = NSPredicate(format: "trashed == %d", true)
         default:
-            request.predicate = NSPredicate(format: "trashed == %d", false)
+            return 0
         }
         return (try? context.fetch(request).count) ?? 0
     }
