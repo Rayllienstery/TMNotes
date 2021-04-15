@@ -86,17 +86,35 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 
+    func deleteFolderButtonModel(indexPath: IndexPath) -> UIContextualAction {
+        let folderAction = UIContextualAction(style: .normal, title: "Remove folder") { _, _, _ in
+//            guard let note = self.getNoteFromCell(indexPath: indexPath) else { return }
+//            self.openAddToFolderScene(note: note)
+            guard let note = self.getNoteFromCell(indexPath: indexPath) else { return }
+            FoldersProvider.shared.removeNoteFromFolder(noteId: note.id)
+            self.fetchNotes()
+            self.notesListTableView.reloadData()
+        }
+        folderAction.backgroundColor = .systemRed
+        folderAction.image = UIImage(systemName: "folder.fill.badge.minus")
+        return folderAction
+    }
+
     func tableView(_ tableView: UITableView,
                    leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         guard self.folder?.title != "Trash" else { return nil }
-        let folderAction = UIContextualAction(style: .normal, title: "Add to folder") { _, _, _ in
-            guard let note = self.getNoteFromCell(indexPath: indexPath) else { return }
-            self.openAddToFolderScene(note: note)
-        }
-        folderAction.backgroundColor = .systemBlue
-        folderAction.image = UIImage(systemName: "folder.fill.badge.plus")
+        if folder != nil {
+            return .init(actions: [deleteFolderButtonModel(indexPath: indexPath)])
+        } else {
+            let folderAction = UIContextualAction(style: .normal, title: "Add to folder") { _, _, _ in
+                guard let note = self.getNoteFromCell(indexPath: indexPath) else { return }
+                self.openAddToFolderScene(note: note)
+            }
+            folderAction.backgroundColor = .systemBlue
+            folderAction.image = UIImage(systemName: "folder.fill.badge.plus")
 
-        return .init(actions: [folderAction])
+            return .init(actions: [folderAction])
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

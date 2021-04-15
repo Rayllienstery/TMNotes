@@ -127,4 +127,26 @@ Folder \(folder.title ?? "will be removed").
             return nil
         }
     }
+
+    func removeNoteFromFolder(noteId: Int64) {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?
+                .persistentContainer.viewContext else { return }
+        guard let folders = (try? context.fetch(Folder.fetchRequest()) as? [Folder]) else { return }
+        folders.forEach({
+            if let notes = $0.notes {
+                var parsedNotes = (try? JSONSerialization.jsonObject(with: notes, options: [])) as? [Int64]
+                print(parsedNotes)
+                parsedNotes?.removeAll(where: {$0 == noteId})
+                guard let noteIdToData = try?
+                        JSONSerialization.data(withJSONObject: parsedNotes, options: []) else { return }
+                $0.notes = noteIdToData
+                print(parsedNotes)
+            }
+        })
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
+    }
 }
