@@ -108,4 +108,23 @@ Folder \(folder.title ?? "will be removed").
             print(error)
         }
     }
+    
+    func getFolder(noteId: Int64) -> Folder? {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?
+                .persistentContainer.viewContext else { return nil }
+        guard let folders = (try? context.fetch(Folder.fetchRequest()) as? [Folder])?.filter({
+            if let notes = $0.notes {
+                let parsedNotes = (try? JSONSerialization.jsonObject(with: notes, options: [])) as? [Int64]
+                return parsedNotes?.contains(noteId) ?? false
+            } else {
+                return false
+            }
+        }) else { return nil }
+
+        if folders.count > 0 {
+            return folders.first
+        } else {
+            return nil
+        }
+    }
 }

@@ -37,7 +37,8 @@ extension Folder {
                                     JSONSerialization.jsonObject(with: notes!, options: [])) as? [Int64] else { return }
             if !notesList.contains(note.id) {
                 notesList.append(note.id)
-                guard let noteIdToData = try? JSONSerialization.data(withJSONObject: notesList, options: []) else { return }
+                guard let noteIdToData = try?
+                        JSONSerialization.data(withJSONObject: notesList, options: []) else { return }
                 self.notes = noteIdToData
             }
         }

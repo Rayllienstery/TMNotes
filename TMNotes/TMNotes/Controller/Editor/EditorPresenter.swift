@@ -15,7 +15,15 @@ extension EditorViewController {
         if let note = note {
             self.titleTextView.text = note.title
             self.contentTextView.text = note.content
+
+            if let folder = FoldersProvider.shared.getFolder(noteId: note.id) {
+                self.folderTitle.text = folder.title
+                if let folderImage = folder.imagePath {
+                    self.folderImageView.image = UIImage(systemName: folderImage)
+                }
+            }
         }
+
     }
 
     func showErrorSyncAlert() {
