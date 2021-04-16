@@ -34,6 +34,7 @@ extension MainViewController {
             self.notes.remove(at: indexPath.row)
             self.notesListTableView.deleteRows(at: [indexPath], with: .automatic)
             self.notesListTableView.endUpdates()
+            self.notesListTableView.reloadSections([0], with: .automatic)
         }
     }
 
