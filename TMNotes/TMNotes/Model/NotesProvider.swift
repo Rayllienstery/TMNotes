@@ -29,13 +29,13 @@ class NotesProvider {
         default:
             guard let notes = try? context.fetch(request) else { return nil }
             if folder == nil {
-                return notes
+                return notes.filter({$0.trashed == false})
             } else {
                 guard let notesData = folder?.notes else { return nil }
                 guard let notesList = (try? JSONSerialization.jsonObject(with: notesData,
                                                                      options: [])) as? [Int64] else { return nil }
                 return notes.filter { note -> Bool in
-                    notesList.contains(note.id)
+                    notesList.contains(note.id) && note.trashed == false
                 }
             }
         }
