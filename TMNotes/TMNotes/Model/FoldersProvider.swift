@@ -134,11 +134,14 @@ Folder \(folder.title ?? "will be removed").
         guard let folders = (try? context.fetch(Folder.fetchRequest()) as? [Folder]) else { return }
         folders.forEach({
             if let notes = $0.notes {
-                var parsedNotes = (try? JSONSerialization.jsonObject(with: notes, options: [])) as? [Int64]
-                parsedNotes?.removeAll(where: {$0 == noteId})
-                guard let noteIdToData = try?
-                        JSONSerialization.data(withJSONObject: parsedNotes, options: []) else { return }
-                $0.notes = noteIdToData
+                do {
+                    var parsedNotes = (try JSONSerialization.jsonObject(with: notes, options: [])) as? [Int64]
+                    parsedNotes?.removeAll(where: {$0 == noteId})
+                    let noteIdToData = try JSONSerialization.data(withJSONObject: parsedNotes ?? [], options: [])
+                    $0.notes = noteIdToData
+                } catch {
+                    print(error)
+                }
             }
         })
         do {
