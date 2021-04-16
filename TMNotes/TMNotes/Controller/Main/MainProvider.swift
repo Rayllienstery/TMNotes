@@ -41,8 +41,10 @@ extension MainViewController {
     func restoreNote(indexPath: IndexPath) {
         guard let note = getNoteFromCell(indexPath: indexPath) else { return }
         NotesProvider.shared.markAsTrashed(note, status: false) {
-            self.fetchNotes()
-            self.notesListTableView.reloadData()
+            self.notesListTableView.beginUpdates()
+            self.notes.remove(at: indexPath.row)
+            self.notesListTableView.deleteRows(at: [indexPath], with: .automatic)
+            self.notesListTableView.endUpdates()
         }
     }
 
