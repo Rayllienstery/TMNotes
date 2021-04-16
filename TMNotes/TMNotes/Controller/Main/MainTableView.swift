@@ -20,11 +20,11 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             return self.folder == nil ? 1 : 0
         case 2:
             emptyLabel.isHidden = notes.count > 0
+            tableView.isScrollEnabled = notes.count > 0
             return self.notes.count
         default:
             return 0
         }
-
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
