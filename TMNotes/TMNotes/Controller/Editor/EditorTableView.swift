@@ -7,7 +7,7 @@
 
 import UIKit
 
-//extension EditorViewController: UITableViewDelegate,
+// extension EditorViewController: UITableViewDelegate,
 //                                UITableViewDataSource {
 //
-//}
+// }

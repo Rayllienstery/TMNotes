@@ -17,13 +17,16 @@ extension EditorViewController {
             self.contentTextView.text = note.content
 
             if let folder = FoldersProvider.shared.getFolder(noteId: note.id) {
+                self.folder = folder
+                self.removeFolderButton.isHidden = false
                 self.folderTitle.text = folder.title
                 if let folderImage = folder.imagePath {
                     self.folderImageView.image = UIImage(systemName: folderImage)
+                } else {
+                    folderImageView.image = UIImage(systemName: "folder")
                 }
             }
         }
-
     }
 
     func showErrorSyncAlert() {

@@ -108,7 +108,7 @@ Folder \(folder.title ?? "will be removed").
             print(error)
         }
     }
-    
+
     func getFolder(noteId: Int64) -> Folder? {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?
                 .persistentContainer.viewContext else { return nil }

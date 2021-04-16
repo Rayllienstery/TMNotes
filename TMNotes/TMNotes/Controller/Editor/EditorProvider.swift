@@ -11,10 +11,6 @@ extension EditorViewController {
     func initProvider() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(backgroundClick(_:)))
         self.containerScrollView.addGestureRecognizer(tap)
-
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-//            self.titleTextView.becomeFirstResponder()
-//        }
     }
 
     func saveNoteIfNecessary() {
@@ -36,7 +32,7 @@ extension EditorViewController {
         } else {
             deleteNoteIfNecessary()
         }
-        //TODO: IMAGES checker, VOICE checker if will be implemented
+        // TODO: IMAGES checker, VOICE checker if will be implemented
     }
 
     func deleteNoteIfNecessary() {
@@ -47,6 +43,16 @@ extension EditorViewController {
 
     @objc func backgroundClick(_ sender: UITapGestureRecognizer? = nil) {
         self.contentTextView.becomeFirstResponder()
+    }
+
+    func removeFolder() {
+        if let noteId = note?.id {
+            FoldersProvider.shared.removeNoteFromFolder(noteId: noteId)
+        }
+        self.folder = nil
+        self.folderTitle.text = "Without folder"
+        self.folderImageView.image = UIImage(systemName: "questionmark.folder")
+        self.removeFolderButton.isHidden = true
     }
 }
 
