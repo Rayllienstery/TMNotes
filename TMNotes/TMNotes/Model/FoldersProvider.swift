@@ -135,12 +135,10 @@ Folder \(folder.title ?? "will be removed").
         folders.forEach({
             if let notes = $0.notes {
                 var parsedNotes = (try? JSONSerialization.jsonObject(with: notes, options: [])) as? [Int64]
-                print(parsedNotes)
                 parsedNotes?.removeAll(where: {$0 == noteId})
                 guard let noteIdToData = try?
                         JSONSerialization.data(withJSONObject: parsedNotes, options: []) else { return }
                 $0.notes = noteIdToData
-                print(parsedNotes)
             }
         })
         do {
