@@ -30,8 +30,10 @@ extension MainViewController {
     func trashNote(indexPath: IndexPath) {
         guard let note = getNoteFromCell(indexPath: indexPath) else { return }
         NotesProvider.shared.markAsTrashed(note, status: true) {
-            self.fetchNotes()
-            self.notesListTableView.reloadData()
+            self.notesListTableView.beginUpdates()
+            self.notes.remove(at: indexPath.row)
+            self.notesListTableView.deleteRows(at: [indexPath], with: .automatic)
+            self.notesListTableView.endUpdates()
         }
     }
 
