@@ -12,9 +12,29 @@ enum NotesProviderValues: String {
     case latestNoteId = "LatestNoteId"
 }
 
+enum NotesSortType: String {
+    case changeDate = "Change date"
+    case changeDateReversed = "Change date reversed"
+}
+
 class NotesProvider {
     public static let shared = NotesProvider()
+    private let sorterKey = "Default_Sorter"
+    private var sorter: NotesSortType = .changeDate
 
+    // MARK: - Init
+    init() {
+        if UserDefaults.standard.object(forKey: sorterKey) == nil {
+            print("Empty")
+            UserDefaults.standard.setValue(NotesSortType.changeDate.rawValue, forKey: sorterKey)
+            UserDefaults.standard.synchronize()
+        } else {
+            self.sorter = NotesSortType(rawValue: UserDefaults.standard.value(forKey: sorterKey)
+                                            as? String ?? NotesSortType.changeDate.rawValue) ?? .changeDate
+        }
+    }
+
+    // MARK: - Get
     func getNotes(folder: Folder?) -> [Note]? {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?
                 .persistentContainer.viewContext else { return nil }
@@ -29,18 +49,28 @@ class NotesProvider {
         default:
             guard let notes = try? context.fetch(request) else { return nil }
             if folder == nil {
-                return notes.filter({$0.trashed == false})
+                return sortNotes(notes: notes.filter({$0.trashed == false}))
             } else {
                 guard let notesData = folder?.notes else { return nil }
                 guard let notesList = (try? JSONSerialization.jsonObject(with: notesData,
                                                                      options: [])) as? [Int64] else { return nil }
-                return notes.filter { note -> Bool in
-                    notesList.contains(note.id) && note.trashed == false
-                }
+                return sortNotes(notes: notes.filter({
+                                                        notesList.contains($0.id)
+                                                            && $0.trashed == false}))
             }
         }
     }
 
+    func sortNotes(notes: [Note]) -> [Note] {
+        switch sorter {
+        case .changeDate:
+            return notes.sorted(by: {$0.editedTimestamp > $1.editedTimestamp})
+        case .changeDateReversed:
+            return notes
+        }
+    }
+
+    // MARK: - Set
     func addNote(title: String, content: String? = "") {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?
                 .persistentContainer.viewContext else { return }
@@ -51,6 +81,7 @@ class NotesProvider {
         note.starred = false
         note.pinned = false
         note.id = Int64(updateLatestIdWithGet())
+        note.editedTimestamp = Date().timeIntervalSince1970
         self.sync(context)
     }
 
@@ -77,14 +108,6 @@ class NotesProvider {
         return noteId
     }
 
-    func sync(_ context: NSManagedObjectContext) {
-        do {
-            try context.save()
-        } catch {
-            print(error)
-        }
-    }
-
     func markAsTrashed(_ note: Note, status: Bool, completion: @escaping () -> Void) {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?
                 .persistentContainer.viewContext else { return }
@@ -109,5 +132,18 @@ class NotesProvider {
         note.starred = !note.starred
         sync(context)
         completion()
+    }
+
+    func sync(_ context: NSManagedObjectContext) {
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
+    }
+
+    func setDefaultSorter(sorter: NotesSortType) {
+        self.sorter = sorter
+        UserDefaults.standard.setValue(sorter.rawValue, forKey: sorterKey)
     }
 }

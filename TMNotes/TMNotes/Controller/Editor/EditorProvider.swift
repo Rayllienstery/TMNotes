@@ -16,8 +16,12 @@ extension EditorViewController {
     func saveNoteIfNecessary() {
         if self.titleTextView.text.count > 0 || self.contentTextView.text.count > 0 {
             if let note = note {
-                note.title = self.titleTextView.text
-                note.content = self.contentTextView.text
+                if note.title != self.titleTextView.text ||
+                    note.content != self.titleTextView.text {
+                    note.title = self.titleTextView.text
+                    note.content = self.contentTextView.text
+                    note.editedTimestamp = Date().timeIntervalSince1970
+                }
                 guard let context = (UIApplication.shared.delegate as? AppDelegate)?
                         .persistentContainer.viewContext else {
                     self.showErrorSyncAlert()
