@@ -81,4 +81,36 @@ extension MainViewController {
         }
         self.present(view, animated: true, completion: nil)
     }
+
+    func openFolderListLogic() {
+        guard let view = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+                .instantiateViewController(withIdentifier: "SelectFolder")
+                as? SelectFolderViewController else { return }
+        view.completion = { folder in
+            if let folder = folder, let navigation = self.navigationController {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    MainRouter.call(to: navigation, folder: folder, true)
+                }
+            }
+        }
+        self.present(view, animated: true, completion: nil)
+    }
+
+    func editSorterLogic() {
+        let alert = UIAlertController(
+            title: "Select sort method",
+            message: nil,
+            preferredStyle: UIDevice.current.userInterfaceIdiom == .phone ? .actionSheet : .alert)
+        NotesSortType.allCases.forEach { sortType in
+                        alert.addAction(.init(title: sortType.rawValue, style: .default, handler: { _ in
+                            NotesProvider.shared.setDefaultSorter(sorter: sortType)
+                            self.fetchNotes()
+                            DispatchQueue.main.async {
+                                self.notesListTableView.reloadData()
+                            }
+                        }))
+        }
+        alert.addAction(.init(title: "Cancel", style: .destructive, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }

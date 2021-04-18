@@ -12,7 +12,7 @@ enum NotesProviderValues: String {
     case latestNoteId = "LatestNoteId"
 }
 
-enum NotesSortType: String {
+enum NotesSortType: String, CaseIterable {
     case changeDate = "Change date"
     case changeDateReversed = "Change date reversed"
 }
@@ -66,7 +66,7 @@ class NotesProvider {
         case .changeDate:
             return notes.sorted(by: {$0.editedTimestamp > $1.editedTimestamp})
         case .changeDateReversed:
-            return notes
+            return notes.sorted(by: {$0.editedTimestamp < $1.editedTimestamp})
         }
     }
 
@@ -145,5 +145,6 @@ class NotesProvider {
     func setDefaultSorter(sorter: NotesSortType) {
         self.sorter = sorter
         UserDefaults.standard.setValue(sorter.rawValue, forKey: sorterKey)
+        UserDefaults.standard.synchronize()
     }
 }

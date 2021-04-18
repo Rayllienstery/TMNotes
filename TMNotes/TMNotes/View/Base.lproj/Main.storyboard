@@ -117,7 +117,7 @@
                                                     <rect key="frame" x="352" y="-1" width="46" height="30.5"/>
                                                     <state key="normal" title="See all"/>
                                                     <connections>
-                                                        <action selector="openFolderList" destination="BYZ-38-t0r" eventType="touchUpInside" id="SPb-aB-rzG"/>
+                                                        <action selector="openFolderListClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="SPb-aB-rzG"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -315,6 +315,26 @@
                                             <constraint firstAttribute="height" constant="32" id="ebE-7E-wva"/>
                                         </constraints>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeH-Cn-lCF">
+                                        <rect key="frame" x="8" y="8" width="32" height="32"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVf-M1-YND">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="UVf-M1-YND" secondAttribute="height" id="kcI-0I-0Wd"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="list.bullet" catalog="system" symbolScale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="editSorterClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A7T-Wf-rxq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="uTX-nl-Plb"/>
+                                        </constraints>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxZ-vk-gOB">
                                         <rect key="frame" x="186" y="17" width="42.5" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -326,6 +346,8 @@
                                 <constraints>
                                     <constraint firstItem="crR-cs-4lB" firstAttribute="centerY" secondItem="pZi-Ue-0ey" secondAttribute="centerY" id="2SV-8n-cev"/>
                                     <constraint firstAttribute="trailing" secondItem="crR-cs-4lB" secondAttribute="trailing" constant="8" id="Ee5-ba-80a"/>
+                                    <constraint firstItem="eeH-Cn-lCF" firstAttribute="centerY" secondItem="pZi-Ue-0ey" secondAttribute="centerY" id="GSN-yn-G0I"/>
+                                    <constraint firstItem="eeH-Cn-lCF" firstAttribute="leading" secondItem="pZi-Ue-0ey" secondAttribute="leading" constant="8" id="Ma3-uE-elO"/>
                                     <constraint firstAttribute="height" constant="48" id="Tnm-Ec-Y0B"/>
                                     <constraint firstItem="dxZ-vk-gOB" firstAttribute="centerY" secondItem="pZi-Ue-0ey" secondAttribute="centerY" id="ZkV-zQ-hpl"/>
                                     <constraint firstItem="dxZ-vk-gOB" firstAttribute="centerX" secondItem="pZi-Ue-0ey" secondAttribute="centerX" id="fZU-6c-zMc"/>
@@ -414,27 +436,27 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SelectFolderCell" id="H91-0H-kWC" customClass="SelectFolderTableViewCell" customModule="TMNotes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H91-0H-kWC" id="PDN-eE-oTs">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ggD-34-Ajd">
-                                                    <rect key="frame" x="16" y="17" width="23" height="21.5"/>
+                                                    <rect key="frame" x="16" y="16.5" width="23" height="21.5"/>
                                                     <color key="tintColor" systemColor="secondaryLabelColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="p8O-QV-cIc"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzI-i9-lGm">
-                                                    <rect key="frame" x="47" y="17" width="42" height="21.5"/>
+                                                    <rect key="frame" x="47" y="17" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSn-XM-bKc">
-                                                    <rect key="frame" x="363" y="20.5" width="31" height="15"/>
+                                                    <rect key="frame" x="363" y="20" width="31" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
@@ -688,6 +710,7 @@
         <image name="folder" catalog="system" width="128" height="97"/>
         <image name="folder.badge.plus" catalog="system" width="128" height="91"/>
         <image name="folder.fill" catalog="system" width="128" height="97"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="pin.fill" catalog="system" width="119" height="128"/>
         <image name="questionmark.folder" catalog="system" width="128" height="97"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>

@@ -46,7 +46,7 @@ extension EditorViewController {
     }
 
     @objc func backgroundClick(_ sender: UITapGestureRecognizer? = nil) {
-        self.contentTextView.becomeFirstResponder()
+        becomeEdit()
     }
 
     func removeFolder() {
@@ -54,9 +54,7 @@ extension EditorViewController {
             FoldersProvider.shared.removeNoteFromFolder(noteId: noteId)
         }
         self.folder = nil
-        self.folderTitle.text = "Without folder"
-        self.folderImageView.image = UIImage(systemName: "questionmark.folder")
-        self.removeFolderButton.isHidden = true
+        setFolderUI(folder: nil)
     }
 }
 

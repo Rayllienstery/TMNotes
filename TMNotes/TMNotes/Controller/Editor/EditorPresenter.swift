@@ -18,13 +18,7 @@ extension EditorViewController {
 
             if let folder = FoldersProvider.shared.getFolder(noteId: note.id) {
                 self.folder = folder
-                self.removeFolderButton.isHidden = false
-                self.folderTitle.text = folder.title
-                if let folderImage = folder.imagePath {
-                    self.folderImageView.image = UIImage(systemName: folderImage)
-                } else {
-                    folderImageView.image = UIImage(systemName: "folder")
-                }
+                setFolderUI(folder: folder)
             }
         }
     }
@@ -34,5 +28,25 @@ extension EditorViewController {
                                       message: "Comething was wrong with note save", preferredStyle: .alert)
         alert.addAction(.init(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+
+    func becomeEdit() {
+        self.contentTextView.becomeFirstResponder()
+    }
+
+    func setFolderUI(folder: Folder?) {
+        if let folder = folder {
+            self.removeFolderButton.isHidden = false
+            self.folderTitle.text = folder.title
+            if let folderImage = folder.imagePath {
+                self.folderImageView.image = UIImage(systemName: folderImage)
+            } else {
+                folderImageView.image = UIImage(systemName: "folder")
+            }
+        } else {
+            self.folderTitle.text = "Without folder"
+            self.folderImageView.image = UIImage(systemName: "questionmark.folder")
+            self.removeFolderButton.isHidden = true
+        }
     }
 }
