@@ -44,10 +44,20 @@ class NotesProvider {
         switch folder?.title {
         case "Trash":
             request.predicate = NSPredicate(format: "trashed == %d", true)
-            return try? context.fetch(request)
+            do {
+                let notes = try context.fetch(request)
+                return sortNotes(notes: notes)
+            } catch {
+                return nil
+            }
         case "Starred":
             request.predicate = NSPredicate(format: "starred == %d", true)
-            return try? context.fetch(request)
+            do {
+                let notes = try context.fetch(request)
+                return sortNotes(notes: notes)
+            } catch {
+                return nil
+            }
         default:
             guard let notes = try? context.fetch(request) else { return nil }
             if folder == nil {

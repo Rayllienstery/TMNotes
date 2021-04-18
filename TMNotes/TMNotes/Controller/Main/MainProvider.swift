@@ -11,6 +11,7 @@ extension MainViewController {
     func initProvider() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(updateUI), name: .foldersUpdated, object: nil)
+
     }
 
      func fetchNotes() {
