@@ -13,6 +13,8 @@ enum NotesProviderValues: String {
 }
 
 enum NotesSortType: String, CaseIterable {
+    case title = "Title"
+    case titleReversed = "Title reversed"
     case changeDate = "Change date"
     case changeDateReversed = "Change date reversed"
 }
@@ -67,6 +69,10 @@ class NotesProvider {
             return notes.sorted(by: {$0.editedTimestamp > $1.editedTimestamp})
         case .changeDateReversed:
             return notes.sorted(by: {$0.editedTimestamp < $1.editedTimestamp})
+        case .title:
+            return notes.sorted(by: {($0.title ?? "") < ($1.title ?? "")})
+        case .titleReversed:
+            return notes.sorted(by: {($0.title ?? "") > ($1.title ?? "")})
         }
     }
 
