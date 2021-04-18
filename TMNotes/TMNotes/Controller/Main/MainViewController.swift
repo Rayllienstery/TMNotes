@@ -13,6 +13,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var notesListTableView: UITableView!
     @IBOutlet weak var notesCounterLabel: UILabel!
 
+    @IBOutlet weak var newNoteButton: UIButton!
+    @IBOutlet weak var trashButton: UIButton!
+    
     var notes = [Note]()
     var folders = [Folder]()
 
@@ -39,5 +42,9 @@ class MainViewController: UIViewController {
 
     @IBAction func editSorterClick(_ sender: Any) {
         editSorterLogic()
+    }
+
+    @IBAction func emptyTrashClick(_ sender: Any) {
+        emptyTrash()
     }
 }

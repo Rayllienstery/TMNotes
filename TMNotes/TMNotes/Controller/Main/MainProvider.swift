@@ -114,4 +114,15 @@ extension MainViewController {
         alert.addAction(.init(title: "Cancel", style: .destructive, handler: nil))
         present(alert, animated: true, completion: nil)
     }
+
+    func emptyTrash() {
+        let alert = UIAlertController(title: "Are you sure?",
+                                      message: "All messages on the trash will be permanently deleted!", preferredStyle: .alert)
+        alert.addAction(.init(title: "Ok", style: .destructive, handler: { _ in
+            FoldersProvider.shared.emptyTrash()
+            self.updateUI()
+        }))
+        alert.addAction(.init(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }

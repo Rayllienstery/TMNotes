@@ -150,4 +150,14 @@ Folder \(folder.title ?? "will be removed").
             print(error)
         }
     }
+
+    func emptyTrash() {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?
+                .persistentContainer.viewContext else { return }
+        let request: NSFetchRequest<Note> = Note.fetchRequest()
+        request.predicate = NSPredicate(format: "trashed == %d", true)
+        let notes = try? context.fetch(request)
+        notes?.forEach({context.delete($0)})
+        sync(context)
+    }
 }

@@ -10,6 +10,9 @@ import Foundation
 extension MainViewController {
     func initUI() {
         self.title = folder?.title ?? "Notes"
+        let isTrashFolder = self.folder?.title == "Trash"
+        self.trashButton.isHidden = !isTrashFolder
+        self.newNoteButton.isHidden = isTrashFolder
     }
 
     @objc func updateUI() {

@@ -27,7 +27,6 @@ class NotesProvider {
     // MARK: - Init
     init() {
         if UserDefaults.standard.object(forKey: sorterKey) == nil {
-            print("Empty")
             UserDefaults.standard.setValue(NotesSortType.changeDate.rawValue, forKey: sorterKey)
             UserDefaults.standard.synchronize()
         } else {

@@ -296,10 +296,22 @@
                                 <rect key="frame" x="0.0" y="814" width="414" height="48"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crR-cs-4lB">
-                                        <rect key="frame" x="374" y="8" width="32" height="32"/>
+                                        <rect key="frame" x="342" y="8" width="64" height="32"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1g-Kh-0lD">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4f-hP-HTa">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="H4f-hP-HTa" secondAttribute="height" id="mK5-2J-moB"/>
+                                                </constraints>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="trash.slash" catalog="system" symbolScale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="emptyTrashClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Guj-a2-fVg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1g-Kh-0lD">
+                                                <rect key="frame" x="32" y="0.0" width="32" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="F1g-Kh-0lD" secondAttribute="height" id="jL5-tr-h9q"/>
                                                 </constraints>
@@ -386,8 +398,10 @@
                     <navigationItem key="navigationItem" title="TMNotes" largeTitleDisplayMode="always" id="lVQ-e7-i6w"/>
                     <connections>
                         <outlet property="emptyLabel" destination="scf-Vi-Ndl" id="0eV-2l-JLf"/>
+                        <outlet property="newNoteButton" destination="F1g-Kh-0lD" id="Nu3-le-WMC"/>
                         <outlet property="notesCounterLabel" destination="dxZ-vk-gOB" id="I1t-0r-Pi3"/>
                         <outlet property="notesListTableView" destination="WoQ-E2-3dY" id="Xmg-dE-4ef"/>
+                        <outlet property="trashButton" destination="H4f-hP-HTa" id="qpk-Ry-b3E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -716,6 +730,7 @@
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="tag.fill" catalog="system" width="128" height="119"/>
+        <image name="trash.slash" catalog="system" width="115" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
